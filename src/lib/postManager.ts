@@ -2,7 +2,7 @@ import fs from 'fs/promises';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { MarkdownProcessor, ProcessedPost } from './markdownProcessor.js';
-import { Logger } from '@/utils/logger.js';
+import { Logger } from '../utils/logger.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const POSTS_DIR = path.join(__dirname, '../../posts');

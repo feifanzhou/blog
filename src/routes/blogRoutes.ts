@@ -1,8 +1,8 @@
 import Router from '@koa/router';
-import { PostManager } from '@/lib/postManager.js';
-import { MarkdownProcessor } from '@/lib/markdownProcessor.js';
-import { setSEO } from '@/middleware/seoMiddleware.js';
-import { Logger } from '@/utils/logger.js';
+import { PostManager } from '../lib/postManager.js';
+import { MarkdownProcessor } from '../lib/markdownProcessor.js';
+import { setSEO } from '../middleware/seoMiddleware.js';
+import { Logger } from '../utils/logger.js';
 import type { Context } from 'koa';
 
 const router = new Router();

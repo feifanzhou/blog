@@ -1,5 +1,5 @@
 import { Context, Next } from 'koa';
-import { Logger } from '@/utils/logger.js';
+import { Logger } from '../utils/logger.js';
 
 interface HttpError extends Error {
   statusCode?: number;

@@ -1,5 +1,5 @@
 import type { Context, Next } from 'koa';
-import { Logger } from '@/utils/logger.js';
+import { Logger } from '../utils/logger.js';
 
 interface CacheOptions {
   maxAge: number; // Cache duration in seconds

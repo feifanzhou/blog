@@ -4,12 +4,12 @@ import serve from 'koa-static';
 import path from 'path';
 import { fileURLToPath } from 'url';
 
-import { errorHandler } from '@/middleware/errorHandler.js';
-import { seoMiddleware } from '@/middleware/seoMiddleware.js';
-import { blogCacheMiddleware } from '@/middleware/cacheMiddleware.js';
-import { requestLogger } from '@/middleware/requestLogger.js';
-import { Logger } from '@/utils/logger.js';
-import router from '@/routes/index.js';
+import { errorHandler } from './middleware/errorHandler.js';
+import { seoMiddleware } from './middleware/seoMiddleware.js';
+import { blogCacheMiddleware } from './middleware/cacheMiddleware.js';
+import { requestLogger } from './middleware/requestLogger.js';
+import { Logger } from './utils/logger.js';
+import router from './routes/index.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
