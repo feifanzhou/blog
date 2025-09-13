@@ -1,0 +1,27 @@
+---
+title: Never Waste a Good Crisis
+date: '2020-03-24'
+updated: '2020-03-24'
+slug: never-waste-a-good-crisis
+excerpt: >-
+  The past few weeks, indefinitely isolated at home, has given me time to think
+  about the civilizational optimizations and limitations that COVID-19 has
+  revealed and the stunning interconnectedness of...
+---
+
+
+The past few weeks, indefinitely isolated at home, has given me time to think about the civilizational optimizations and limitations that COVID-19 has revealed and the stunning interconnectedness of it all. We live in world of long supply chains that magnify rather than mollify shocks and minimally-provision capacity where headroom has been optimized away in service of efficiency. Elsewhere, rules and regulations are being loosened, raising the question of why they're necessary in the first place. And the heterogeneity of government effectiveness is on full display. 
+
+This is a post about the long-term-oriented questions we should be asking as we rebuild. I don't have many of the answers, but I think it's existentially important that we address and act on these questions rather than just trying to return to life as we knew it. For example:
+
+How can we build more resilient supply chains? We've seen shocks in at least three directions: supply shortages in components only manufactured in Chinese factories that have had to shut down; demand spikes in work-from-home equipment, ventilators, and hospital capacity; and demand shortages at restaurants and retail businesses. Perhaps companies will start building redundant supply chains, each rooted in many countries, to better withstand a supply shortage. Perhaps an increased availability of factories also means it'll be easier to retool some of them to produce different products depending on demand, mitigating demand spikes. Perhaps it becomes a core competency for restaurants to have a cloud kitchen operation, or for retail stores to have an e-commerce presence. 
+
+Can we do better than making supply chains merely "resilient"? What would an anti-fragile supply chain look like, one that gets stronger each time there's a disruption somewhere?
+
+Elsewhere, we see rules being lifted (for example, [internet provider data caps](https://techcrunch.com/2020/03/12/coronavirus-could-force-isps-to-abandon-data-caps-forever/) and [regulatory licensing for medical providers](https://twitter.com/housegop/status/1240725534813966336?s=21)), and if rules can be lifted at will, then it raises the question of why they exist in the first place. Certainly some, like in the case of data caps, seem to be entirely arbitrary or rent-seeking without adding additional value. To be clear, that's not a thinly-veiled call to abolish rules everywhere, but it is a call to periodically re-examine legislation and company policies that we live under and determine whether they still apply. Much as [facts have a half-life](https://fs.blog/2012/12/the-half-life-of-facts/), rules and regulations should as well.
+
+Finally, it's worth taking a look at government's role in first mitigating a crisis, and then shepherding the long clean-up and rebuilding process. Government, through its ubiquitousness, is uniquely suited to coordinating a large-scale response to an acute event that affects a broad range of people, but we seem to have no existing metrics or leading indicators of its effectiveness at doing so — only statistics gathered during and after an incident unfolds. How do we ensure that we have a government that can communicate clearly, with a consistent and accurate narrative? How do we ensure that we have effective risk modeling and mitigation capabilities embedded at every level and department? How do we learn to regularly conduct simulations like [Event 201](http://www.centerforhealthsecurity.org/event201/about) and take them seriously, responding to their learnings with the appropriate level of urgency and rigor? What additional responsibilities should be enforced on companies that would be considered "critical" or "essential" infrastructure during incidents, in exchange for perhaps being first-in-line to receive stimuli or bail-outs?
+
+Allow me to editorialize for a moment: it seems far-fetched to imagine government (Western governments at least) as a source of innovation or an entity capable of improving the quality-of-life for its constituents. That capability and responsibility seems to be reserved for private enterprises, big and small. In such a world, government should provide downside protection and crisis mitigation, essentially acting as a bedrock upon which entrepreneurs can build and test their ideas. Because government is, by definition, everywhere and has access to the most data, it _should be_ uniquely suited to this role. We need to ensure that it's actually good at it.
+
+The next crisis almost certainly isn't going to look like this one. The cause will be different, and it'll impact a different set of people. And while COVID-19 isn't likely to affect me as a healthy 20-something-year-old, that won't always be the case. It's not a stretch of the imagination to say that everyone will be hit hard by a large-scale crisis at some point in their lives, and that's incentive enough for me to care that we get this right. Whether we return to "normal" by summer or remain in various degrees of lockdown for over a year, it's clear that COVID-19 is a crisis that has exposed civilizational foundations and areas of improvement. We shouldn't let this opportunity go to waste.

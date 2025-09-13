@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/styles/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.30.0/themes/prism.min.css">
+</head>
+<body class="h-full bg-gray-50 flex flex-col">
+    <header class="bg-white shadow-sm">
+        <div class="blog-container">
+            <div class="blog-nav">
+                <h1 class="text-2xl font-bold text-gray-900">
+                    <a href="/" class="hover:text-blue-600 transition-colors">My Blog</a>
+                </h1>
+                <nav class="blog-nav-links">
+                    <a href="/" class="blog-nav-link <%= currentPage === 'home' ? 'text-blue-600' : '' %>">Home</a>
+                    <a href="/posts" class="blog-nav-link <%= currentPage === 'posts' ? 'text-blue-600' : '' %>">Posts</a>
+                    <a href="/about" class="blog-nav-link">About</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+    
+    <main class="flex-1">
+<div class="blog-container">
+    <div class="blog-header">
+        <h2 class="blog-title">Welcome to My Blog</h2>
+        <p class="blog-subtitle">Latest thoughts, ideas, and technical musings</p>
+    </div>
+    
+    <% if (posts && posts.length > 0) { %>
+        <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3 mb-12">
+            <% posts.forEach(post => { %>
+                <article class="blog-card">
+                    <h3 class="blog-card-title">
+                        <a href="/posts/<%= post.meta.slug %>" class="hover:text-blue-600 transition-colors">
+                            <%= post.meta.title %>
+                        </a>
+                    </h3>
+                    <p class="blog-card-excerpt"><%= post.excerpt %></p>
+                    <div class="blog-card-meta">
+                        <span><%= new Date(post.meta.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' }) %></span>
+                        <span>·</span>
+                        <span><%= post.readingTime %> min read</span>
+                        <% if (post.meta.tags && post.meta.tags.length > 0) { %>
+                            <span>·</span>
+                            <% post.meta.tags.slice(0, 2).forEach((tag, index) => { %>
+                                <a href="/labeled/<%= tag.toLowerCase() %>" class="text-blue-600 hover:text-blue-800 text-sm">
+                                    <%= tag %><%= index < Math.min(post.meta.tags.length, 2) - 1 ? ',' : '' %>
+                                </a>
+                            <% }); %>
+                        <% } %>
+                    </div>
+                </article>
+            <% }); %>
+        </div>
+        
+        <div class="text-center">
+            <a href="/posts" class="inline-flex items-center px-6 py-3 border border-gray-300 shadow-sm text-base font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 transition-colors">
+                View All Posts
+                <svg class="ml-2 -mr-1 w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                </svg>
+            </a>
+        </div>
+    <% } else { %>
+        <div class="text-center py-12">
+            <h3 class="text-lg font-medium text-gray-900 mb-2">No posts yet</h3>
+            <p class="text-gray-600">Check back soon for new content!</p>
+        </div>
+    <% } %>
+</div>
+
+<% if (categories && categories.length > 0) { %>
+<div class="bg-white border-t border-gray-200 mt-12">
+    <div class="blog-container py-8">
+        <h3 class="text-lg font-semibold text-gray-900 mb-4">Popular Categories</h3>
+        <div class="flex flex-wrap gap-2">
+            <% categories.forEach(cat => { %>
+                <a href="/labeled/<%= cat.category %>" class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-blue-100 text-blue-800 hover:bg-blue-200 transition-colors">
+                    <%= cat.category %> 
+                    <span class="ml-1 text-blue-600">(<%= cat.count %>)</span>
+                </a>
+            <% }); %>
+        </div>
+    </div>
+</div>
+<% } %>
+    </main>
+    
+    <footer class="bg-white border-t border-gray-200 mt-12">
+        <div class="blog-container">
+            <div class="blog-footer">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <p class="text-gray-600 mb-4 md:mb-0">&copy; 2025 My Blog. Built with Koa.js and Tailwind CSS.</p>
+                    <div class="flex space-x-4">
+                        <a href="/feed.xml" class="text-gray-500 hover:text-gray-700 transition-colors">RSS</a>
+                        <a href="/sitemap.xml" class="text-gray-500 hover:text-gray-700 transition-colors">Sitemap</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.30.0/components/prism-core.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.30.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

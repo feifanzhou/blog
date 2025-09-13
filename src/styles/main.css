@@ -1,0 +1,111 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom blog-focused utilities */
+@layer components {
+  .blog-container {
+    @apply max-w-4xl mx-auto px-6 py-8;
+  }
+  
+  .blog-header {
+    @apply border-b border-gray-200 pb-6 mb-8;
+  }
+  
+  .blog-title {
+    @apply text-3xl md:text-4xl font-bold text-gray-900 mb-2;
+  }
+  
+  .blog-subtitle {
+    @apply text-lg text-gray-600;
+  }
+  
+  .blog-meta {
+    @apply flex items-center gap-4 text-sm text-gray-500 mb-6;
+  }
+  
+  .blog-content {
+    @apply prose prose-lg max-w-none;
+  }
+  
+  .blog-card {
+    @apply bg-white rounded-lg border border-gray-200 p-6 hover:shadow-md transition-shadow duration-200;
+  }
+  
+  .blog-card-title {
+    @apply text-xl font-semibold text-gray-900 mb-2 hover:text-blue-600 transition-colors;
+  }
+  
+  .blog-card-excerpt {
+    @apply text-gray-600 mb-3 line-clamp-3;
+  }
+  
+  .blog-card-meta {
+    @apply text-sm text-gray-500;
+  }
+  
+  .blog-nav {
+    @apply flex items-center justify-between py-4 border-b border-gray-200;
+  }
+  
+  .blog-nav-links {
+    @apply flex space-x-6;
+  }
+  
+  .blog-nav-link {
+    @apply text-gray-600 hover:text-gray-900 font-medium transition-colors;
+  }
+  
+  .blog-footer {
+    @apply border-t border-gray-200 mt-16 pt-8 pb-6;
+  }
+  
+  .btn-primary {
+    @apply bg-blue-600 text-white px-4 py-2 rounded-md font-medium hover:bg-blue-700 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2;
+  }
+  
+  .btn-secondary {
+    @apply bg-gray-200 text-gray-900 px-4 py-2 rounded-md font-medium hover:bg-gray-300 transition-colors focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2;
+  }
+}
+
+@layer utilities {
+  .line-clamp-3 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+  }
+}
+
+/* Code syntax highlighting enhancements */
+pre[class*="language-"] {
+  @apply bg-gray-900 text-gray-100 rounded-lg p-4 overflow-x-auto;
+}
+
+code[class*="language-"] {
+  @apply text-gray-100;
+}
+
+/* Dark mode styles */
+@media (prefers-color-scheme: dark) {
+  .blog-card {
+    @apply bg-gray-800 border-gray-700;
+  }
+  
+  .blog-card-title {
+    @apply text-gray-100 hover:text-blue-400;
+  }
+  
+  .blog-card-excerpt {
+    @apply text-gray-300;
+  }
+  
+  .blog-title {
+    @apply text-gray-100;
+  }
+  
+  .blog-subtitle {
+    @apply text-gray-300;
+  }
+}

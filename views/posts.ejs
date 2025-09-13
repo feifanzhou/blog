@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/styles/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.30.0/themes/prism.min.css">
+</head>
+<body class="h-full bg-gray-50 flex flex-col">
+    <header class="bg-white shadow-sm">
+        <div class="blog-container">
+            <div class="blog-nav">
+                <h1 class="text-2xl font-bold text-gray-900">
+                    <a href="/" class="hover:text-blue-600 transition-colors">My Blog</a>
+                </h1>
+                <nav class="blog-nav-links">
+                    <a href="/" class="blog-nav-link">Home</a>
+                    <a href="/posts" class="blog-nav-link <%= currentPageName === 'posts' ? 'text-blue-600' : '' %>">Posts</a>
+                    <a href="/about" class="blog-nav-link">About</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+    
+    <main class="flex-1">
+        <div class="blog-container">
+            <div class="blog-header">
+                <h2 class="blog-title">All Posts</h2>
+                <p class="blog-subtitle">
+                    <% if (currentPage > 1) { %>
+                        Page <%= currentPage %> of <%= totalPages %>
+                    <% } else { %>
+                        Browse through all blog posts
+                    <% } %>
+                </p>
+            </div>
+            
+            <% if (posts && posts.length > 0) { %>
+                <div class="space-y-8 mb-12">
+                    <% posts.forEach(post => { %>
+                        <article class="blog-card">
+                            <h3 class="blog-card-title">
+                                <a href="/posts/<%= post.meta.slug %>" class="hover:text-blue-600 transition-colors">
+                                    <%= post.meta.title %>
+                                </a>
+                            </h3>
+                            <p class="blog-card-excerpt"><%= post.excerpt %></p>
+                            <div class="blog-card-meta">
+                                <span><%= new Date(post.meta.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' }) %></span>
+                                <span>·</span>
+                                <span><%= post.readingTime %> min read</span>
+                                <% if (post.meta.author) { %>
+                                    <span>·</span>
+                                    <span>by <%= post.meta.author %></span>
+                                <% } %>
+                                <% if (post.meta.tags && post.meta.tags.length > 0) { %>
+                                    <span>·</span>
+                                    <% post.meta.tags.slice(0, 3).forEach((tag, index) => { %>
+                                        <a href="/labeled/<%= tag.toLowerCase() %>" class="text-blue-600 hover:text-blue-800 text-sm">
+                                            <%= tag %><%= index < Math.min(post.meta.tags.length, 3) - 1 ? ',' : '' %>
+                                        </a>
+                                    <% }); %>
+                                <% } %>
+                            </div>
+                        </article>
+                    <% }); %>
+                </div>
+                
+                <!-- Pagination -->
+                <% if (totalPages > 1) { %>
+                <nav class="flex items-center justify-between border-t border-gray-200 px-4 sm:px-0 py-6">
+                    <div class="-mt-px flex w-0 flex-1">
+                        <% if (hasPrevPage) { %>
+                            <a href="/posts?page=<%= currentPage - 1 %>" class="inline-flex items-center border-t-2 border-transparent pr-1 pt-4 text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700">
+                                <svg class="mr-3 h-5 w-5 text-gray-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                                    <path fill-rule="evenodd" d="M18 10a.75.75 0 01-.75.75H4.66l2.1 1.95a.75.75 0 11-1.02 1.1l-3.5-3.25a.75.75 0 010-1.1l3.5-3.25a.75.75 0 111.02 1.1L4.66 9.25h12.59A.75.75 0 0118 10z" clip-rule="evenodd" />
+                                </svg>
+                                Previous
+                            </a>
+                        <% } %>
+                    </div>
+                    <div class="hidden md:-mt-px md:flex">
+                        <% for (let i = Math.max(1, currentPage - 2); i <= Math.min(totalPages, currentPage + 2); i++) { %>
+                            <% if (i === currentPage) { %>
+                                <span class="inline-flex items-center border-t-2 border-blue-500 px-4 pt-4 text-sm font-medium text-blue-600">
+                                    <%= i %>
+                                </span>
+                            <% } else { %>
+                                <a href="/posts?page=<%= i %>" class="inline-flex items-center border-t-2 border-transparent px-4 pt-4 text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700">
+                                    <%= i %>
+                                </a>
+                            <% } %>
+                        <% } %>
+                    </div>
+                    <div class="-mt-px flex w-0 flex-1 justify-end">
+                        <% if (hasNextPage) { %>
+                            <a href="/posts?page=<%= currentPage + 1 %>" class="inline-flex items-center border-t-2 border-transparent pl-1 pt-4 text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700">
+                                Next
+                                <svg class="ml-3 h-5 w-5 text-gray-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                                    <path fill-rule="evenodd" d="M2 10a.75.75 0 01.75-.75h12.59l-2.1-1.95a.75.75 0 111.02-1.1l3.5 3.25a.75.75 0 010 1.1l-3.5 3.25a.75.75 0 11-1.02-1.1l2.1-1.95H2.75A.75.75 0 012 10z" clip-rule="evenodd" />
+                                </svg>
+                            </a>
+                        <% } %>
+                    </div>
+                </nav>
+                <% } %>
+            <% } else { %>
+                <div class="text-center py-12">
+                    <h3 class="text-lg font-medium text-gray-900 mb-2">No posts found</h3>
+                    <p class="text-gray-600">Check back soon for new content!</p>
+                    <a href="/" class="inline-block mt-4 text-blue-600 hover:text-blue-800">← Back to Home</a>
+                </div>
+            <% } %>
+        </div>
+    </main>
+    
+    <footer class="bg-white border-t border-gray-200 mt-12">
+        <div class="blog-container">
+            <div class="blog-footer">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <p class="text-gray-600 mb-4 md:mb-0">&copy; 2025 My Blog. Built with Koa.js and Tailwind CSS.</p>
+                    <div class="flex space-x-4">
+                        <a href="/feed.xml" class="text-gray-500 hover:text-gray-700 transition-colors">RSS</a>
+                        <a href="/sitemap.xml" class="text-gray-500 hover:text-gray-700 transition-colors">Sitemap</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.30.0/components/prism-core.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.30.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>
