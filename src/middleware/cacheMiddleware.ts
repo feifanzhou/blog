@@ -96,8 +96,16 @@ function getCacheKey(ctx: Context): string {
   const url = ctx.url;
   const userAgent = ctx.get('User-Agent') || '';
   
-  // Create a simple hash for the key
-  return Buffer.from(url + userAgent).toString('base64').substring(0, 32);
+  // Create a hash to avoid collisions on similar URLs
+  const content = url + '|' + userAgent;
+  let hash = 0;
+  for (let i = 0; i < content.length; i++) {
+    const char = content.charCodeAt(i);
+    hash = ((hash << 5) - hash) + char;
+    hash = hash & hash; // Convert to 32-bit integer
+  }
+  
+  return `cache_${Math.abs(hash).toString(36)}`;
 }
 
 function isExpired(cached: any, maxAge: number): boolean {
@@ -180,6 +188,11 @@ function cleanupCache() {
 export function clearCache() {
   memoryCache.clear();
   Logger.info('All cache cleared');
+}
+
+// Clear cache immediately when module loads (for development)
+if (process.env.NODE_ENV !== 'production') {
+  clearCache();
 }
 
 // Utility function to get cache stats

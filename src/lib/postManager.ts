@@ -53,6 +53,7 @@ export class PostManager {
         filePath = await this.findPostFile(slug);
       }
 
+
       const markdownContent = await fs.readFile(filePath, 'utf-8');
       const processedPost = MarkdownProcessor.processMarkdown(markdownContent, slug);
       
