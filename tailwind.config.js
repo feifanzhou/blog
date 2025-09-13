@@ -7,6 +7,10 @@ export default {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        'sans': ['IBM Plex Sans', 'sans-serif'],
+        'mono': ['JetBrains Mono', 'monospace'],
+      },
       typography: (theme) => ({
         DEFAULT: {
           css: {
@@ -50,14 +54,17 @@ export default {
               borderRadius: '0.25rem',
               fontSize: '0.875em',
               fontWeight: '400',
+              fontFamily: theme('fontFamily.mono'),
             },
             'pre code': {
               backgroundColor: 'transparent',
               padding: '0',
+              fontFamily: theme('fontFamily.mono'),
             },
             pre: {
               backgroundColor: theme('colors.gray.900'),
               borderRadius: '0.5rem',
+              fontFamily: theme('fontFamily.mono'),
             },
           },
         },
@@ -82,6 +89,7 @@ export default {
             },
             code: {
               backgroundColor: theme('colors.gray.800'),
+              fontFamily: theme('fontFamily.mono'),
             },
           },
         },

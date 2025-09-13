@@ -80,11 +80,17 @@
 
 /* Code syntax highlighting enhancements */
 pre[class*="language-"] {
-  @apply bg-gray-900 text-gray-100 rounded-lg p-4 overflow-x-auto;
+  @apply bg-gray-900 text-gray-100 rounded-lg p-4 overflow-x-auto font-mono;
 }
 
-code[class*="language-"] {
-  @apply text-gray-100;
+code[class*="language-"],
+code {
+  @apply font-mono;
+}
+
+/* Ensure all code elements use monospace font */
+.prose code {
+  @apply font-mono;
 }
 
 /* Dark mode styles */
