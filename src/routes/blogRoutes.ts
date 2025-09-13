@@ -10,7 +10,7 @@ const router = new Router();
 // Homepage - lists all posts chronologically
 router.get('/', async (ctx: Context) => {
   try {
-    const posts = await PostManager.getAllPosts(10); // Latest 10 posts
+    const posts = await PostManager.getAllPosts(); // All posts
     const categories = await PostManager.getAllCategories();
     const archiveData = await PostManager.getArchiveData();
     
