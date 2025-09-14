@@ -9,7 +9,7 @@ interface HttpError extends Error {
 export const errorHandler = async (ctx: Context, next: Next) => {
   try {
     await next();
-    
+
     // Handle 404 for unmatched routes
     if (ctx.response.status === 404 && !ctx.body) {
       ctx.status = 404;
@@ -18,16 +18,16 @@ export const errorHandler = async (ctx: Context, next: Next) => {
   } catch (err) {
     const error = err as HttpError;
     const status = error.statusCode || error.status || 500;
-    
+
     ctx.status = status;
-    
+
     // Log error details
     if (status >= 500) {
       Logger.error('Server error:', error.message, error.stack);
     } else if (status >= 400 && process.env.NODE_ENV === 'development') {
       Logger.warn(`Client error ${status}:`, error.message);
     }
-    
+
     // Render appropriate error page
     if (status === 404) {
       await handle404(ctx);
@@ -36,22 +36,22 @@ export const errorHandler = async (ctx: Context, next: Next) => {
     } else {
       await handleClientError(ctx, error);
     }
-    
+
     ctx.app.emit('error', error, ctx);
   }
 };
 
 async function handle404(ctx: Context) {
   const acceptsHTML = ctx.accepts('html', 'json') === 'html';
-  
+
   if (acceptsHTML) {
     const errorData = {
       title: '404 - Page Not Found',
       status: 404,
       message: 'The page you are looking for could not be found.',
-      currentPage: 'error'
+      currentPage: 'error',
     };
-    
+
     try {
       await ctx.render('error', errorData);
     } catch {
@@ -63,25 +63,26 @@ async function handle404(ctx: Context) {
     ctx.body = {
       error: 'Not Found',
       message: 'The requested resource could not be found.',
-      status: 404
+      status: 404,
     };
   }
 }
 
 async function handle500(ctx: Context, error: HttpError) {
   const acceptsHTML = ctx.accepts('html', 'json') === 'html';
-  
+
   if (acceptsHTML) {
     const errorData = {
       title: '500 - Server Error',
       status: 500,
-      message: process.env.NODE_ENV === 'development' 
-        ? error.message 
-        : 'An internal server error occurred.',
+      message:
+        process.env.NODE_ENV === 'development'
+          ? error.message
+          : 'An internal server error occurred.',
       stack: process.env.NODE_ENV === 'development' ? error.stack : undefined,
-      currentPage: 'error'
+      currentPage: 'error',
     };
-    
+
     try {
       await ctx.render('error', errorData);
     } catch {
@@ -92,24 +93,27 @@ async function handle500(ctx: Context, error: HttpError) {
   } else {
     ctx.body = {
       error: 'Internal Server Error',
-      message: process.env.NODE_ENV === 'development' ? error.message : 'An error occurred.',
+      message:
+        process.env.NODE_ENV === 'development'
+          ? error.message
+          : 'An error occurred.',
       ...(process.env.NODE_ENV === 'development' && { stack: error.stack }),
-      status: 500
+      status: 500,
     };
   }
 }
 
 async function handleClientError(ctx: Context, error: HttpError) {
   const acceptsHTML = ctx.accepts('html', 'json') === 'html';
-  
+
   if (acceptsHTML) {
     const errorData = {
       title: `${ctx.status} - Client Error`,
       status: ctx.status,
       message: error.message || 'A client error occurred.',
-      currentPage: 'error'
+      currentPage: 'error',
     };
-    
+
     try {
       await ctx.render('error', errorData);
     } catch {
@@ -121,7 +125,7 @@ async function handleClientError(ctx: Context, error: HttpError) {
     ctx.body = {
       error: 'Client Error',
       message: error.message || 'A client error occurred.',
-      status: ctx.status
+      status: ctx.status,
     };
   }
 }
@@ -141,7 +145,7 @@ function generateErrorHTML(data: any): string {
         <div class="blog-container">
             <div class="blog-nav">
                 <h1 class="text-2xl font-bold text-gray-900">
-                    <a href="/" class="hover:text-blue-600 transition-colors">My Blog</a>
+                    <a href="/" class="hover:text-blue-600 transition-colors">Feifan Zhou's Blog</a>
                 </h1>
                 <nav class="blog-nav-links">
                     <a href="/" class="blog-nav-link">Home</a>
@@ -151,7 +155,7 @@ function generateErrorHTML(data: any): string {
             </div>
         </div>
     </header>
-    
+
     <main class="flex-1 flex items-center justify-center">
         <div class="text-center">
             <h1 class="text-9xl font-bold text-gray-200">${data.status}</h1>
@@ -163,12 +167,12 @@ function generateErrorHTML(data: any): string {
             ${data.stack ? `<pre class="mt-8 text-left text-xs bg-gray-100 p-4 rounded overflow-auto max-w-2xl mx-auto">${data.stack}</pre>` : ''}
         </div>
     </main>
-    
+
     <footer class="bg-white border-t border-gray-200 mt-12">
         <div class="blog-container">
             <div class="blog-footer">
                 <div class="flex flex-col md:flex-row justify-between items-center">
-                    <p class="text-gray-600 mb-4 md:mb-0">&copy; 2025 My Blog. Built with Koa.js and Tailwind CSS.</p>
+                    <p class="text-gray-600 mb-4 md:mb-0">&copy; 2025 Feifan Zhou.</p>
                 </div>
             </div>
         </div>

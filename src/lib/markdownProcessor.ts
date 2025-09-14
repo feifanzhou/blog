@@ -29,17 +29,17 @@ import type { BlogPostMeta } from '../types/index.js';
 
 // Language alias mapping for better compatibility
 const languageAliases: { [key: string]: string } = {
-  'sh': 'bash',
-  'shell': 'bash',
-  'zsh': 'bash',
-  'powershell': 'bash',
-  'ps1': 'bash',
-  'js': 'javascript',
-  'ts': 'typescript',
-  'yml': 'yaml',
-  'html': 'markup',
-  'xml': 'markup',
-  'dockerfile': 'docker'
+  sh: 'bash',
+  shell: 'bash',
+  zsh: 'bash',
+  powershell: 'bash',
+  ps1: 'bash',
+  js: 'javascript',
+  ts: 'typescript',
+  yml: 'yaml',
+  html: 'markup',
+  xml: 'markup',
+  dockerfile: 'docker',
 };
 
 const md: MarkdownIt = new MarkdownIt({
@@ -50,25 +50,33 @@ const md: MarkdownIt = new MarkdownIt({
     if (!lang) {
       return `<pre><code>${md.utils.escapeHtml(str)}</code></pre>`;
     }
-    
+
     // Normalize language name
-    const normalizedLang = languageAliases[lang.toLowerCase()] || lang.toLowerCase();
-    
+    const normalizedLang =
+      languageAliases[lang.toLowerCase()] || lang.toLowerCase();
+
     // Try to highlight with Prism
     if (normalizedLang && Prism.languages[normalizedLang]) {
       try {
-        const highlightedCode = Prism.highlight(str, Prism.languages[normalizedLang], normalizedLang);
+        const highlightedCode = Prism.highlight(
+          str,
+          Prism.languages[normalizedLang],
+          normalizedLang
+        );
         return `<pre class="language-${normalizedLang}"><code class="language-${normalizedLang}">${highlightedCode}</code></pre>`;
       } catch (error) {
-        console.error(`Failed to highlight code with language "${normalizedLang}":`, error);
+        console.error(
+          `Failed to highlight code with language "${normalizedLang}":`,
+          error
+        );
         // Return unhighlighted code with language class
         return `<pre class="language-${normalizedLang}"><code class="language-${normalizedLang}">${md.utils.escapeHtml(str)}</code></pre>`;
       }
     }
-    
+
     // Default fallback with language class for CSS styling
     return `<pre class="language-${lang}"><code class="language-${lang}">${md.utils.escapeHtml(str)}</code></pre>`;
-  }
+  },
 });
 
 export interface ProcessedPost {
@@ -82,16 +90,21 @@ export class MarkdownProcessor {
   static processMarkdown(markdownContent: string, slug: string): ProcessedPost {
     const { data, content } = matter(markdownContent);
     let htmlContent = md.render(content);
-    
+
     // Post-process HTML for additional enhancements
     htmlContent = this.enhanceHTML(htmlContent);
-    
+
     // Generate excerpt if not provided
     let excerpt = data.excerpt || '';
     if (!excerpt) {
-      const textContent = content.replace(/[#*`_\[\]]/g, '').replace(/\n+/g, ' ').trim();
+      const textContent = content
+        .replace(/[#*`_\[\]]/g, '')
+        .replace(/\n+/g, ' ')
+        .trim();
       const sentences = textContent.split(/[.!?]+/);
-      excerpt = sentences[0] + (sentences.length > 1 || textContent.length > 150 ? '...' : '.');
+      excerpt =
+        sentences[0] +
+        (sentences.length > 1 || textContent.length > 150 ? '...' : '.');
     }
 
     // Calculate reading time (average 200 words per minute)
@@ -107,18 +120,18 @@ export class MarkdownProcessor {
         author: data.author || 'Anonymous',
         excerpt,
         slug,
-        ...data // Include all other frontmatter fields
+        ...data, // Include all other frontmatter fields
       },
       content: htmlContent,
       excerpt,
-      readingTime
+      readingTime,
     };
   }
 
   private static enhanceHTML(html: string): string {
     // Add target="_blank" to external links
     html = html.replace(
-      /<a href="(https?:\/\/[^"]+)"([^>]*)>/g, 
+      /<a href="(https?:\/\/[^"]+)"([^>]*)>/g,
       '<a href="$1" target="_blank" rel="noopener noreferrer"$2>'
     );
 
@@ -140,19 +153,24 @@ export class MarkdownProcessor {
       `
     );
 
-    html = html.replace(
-      /<\/code><\/pre>/g,
-      '</code></pre></div>'
-    );
+    html = html.replace(/<\/code><\/pre>/g, '</code></pre></div>');
 
     return html;
   }
 
-  static generatePageTitle(title: string, siteName: string = 'My Blog'): string {
-    return title === siteName ? siteName : `${title} - ${siteName}`;
+  static generatePageTitle(
+    title: string,
+    siteName: string = "Feifan Zhou's Blog"
+  ): string {
+    return title === siteName ? siteName : `${title} — ${siteName}`;
   }
 
-  static generateMetaDescription(excerpt: string, defaultDescription: string = 'A blog about technology, coding, and ideas'): string {
-    return excerpt.length > 10 ? excerpt.substring(0, 160) + (excerpt.length > 160 ? '...' : '') : defaultDescription;
+  static generateMetaDescription(
+    excerpt: string,
+    defaultDescription: string = 'A blog about technology, coding, and ideas'
+  ): string {
+    return excerpt.length > 10
+      ? excerpt.substring(0, 160) + (excerpt.length > 160 ? '...' : '')
+      : defaultDescription;
   }
 }
