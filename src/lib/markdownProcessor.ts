@@ -106,7 +106,8 @@ export class MarkdownProcessor {
         tags: Array.isArray(data.tags) ? data.tags : [],
         author: data.author || 'Anonymous',
         excerpt,
-        slug
+        slug,
+        ...data // Include all other frontmatter fields
       },
       content: htmlContent,
       excerpt,

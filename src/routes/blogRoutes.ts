@@ -55,6 +55,7 @@ router.get('/posts/:slug', async (ctx: Context) => {
       author: post.meta.author,
       type: 'article',
       publishedTime: new Date(post.meta.date).toISOString(),
+      ...(post.meta.hero_image && { image: post.meta.hero_image }),
     });
 
     await ctx.render('post', {
