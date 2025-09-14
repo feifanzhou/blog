@@ -10,9 +10,9 @@ excerpt: >-
 ---
 
 
-Ahead of getting a few friends to be [Tanagram](https://tanagram.app)'s first users, I wanted to have streaming logs — logs that would show up automatically in a web service ~as soon as they were emitted. Since Tanagram is a currently a small project and is only a desktop app, I didn't want to use expensive, enterprise-focused products like Splunk or Datadog, and I didn't necessarily want to setup and navigate the complexity of a full cloud suite like AWS if I could help it.
+Ahead of getting a few friends to be [Tanagram](https://tanagram.ai)'s first users, I wanted to have streaming logs — logs that would show up automatically in a web service ~as soon as they were emitted. Since Tanagram is a currently a small project and is only a desktop app, I didn't want to use expensive, enterprise-focused products like Splunk or Datadog, and I didn't necessarily want to setup and navigate the complexity of a full cloud suite like AWS if I could help it.
 
-I ended up finding [HyperDX](https://www.hyperdx.io/), which seemed like a nice fit for Tanagram — it had a sufficient free tier, and appeared to be simple enough for me to quickly start using it. However, their installation documentation didn't have Swift-specific guidance, although they do support OpenTelemetry [directly](https://www.hyperdx.io/docs/install/opentelemetry). Unfortunately, the OpenTelemetry documentation for logs in Swift is [extremely lacking](https://opentelemetry.io/docs/languages/swift/instrumentation/#logs) (as of this writing, it only says "The logs API & SDK are currently under development", and … nothing else). I also found the OpenTelemetry-Swift documentation lacking in explanation about the difference between all the different classes and how they were meant to be used. 
+I ended up finding [HyperDX](https://www.hyperdx.io/), which seemed like a nice fit for Tanagram — it had a sufficient free tier, and appeared to be simple enough for me to quickly start using it. However, their installation documentation didn't have Swift-specific guidance, although they do support OpenTelemetry [directly](https://www.hyperdx.io/docs/install/opentelemetry). Unfortunately, the OpenTelemetry documentation for logs in Swift is [extremely lacking](https://opentelemetry.io/docs/languages/swift/instrumentation/#logs) (as of this writing, it only says "The logs API & SDK are currently under development", and … nothing else). I also found the OpenTelemetry-Swift documentation lacking in explanation about the difference between all the different classes and how they were meant to be used.
 
 I decided that it seemed like a fun challenge, so I made a warm cup of coffee and gave myself a few hours to try to get a log line to appear in HyperDX. This is what I came up with (also available as a [gist](https://gist.github.com/feifanzhou/51d87821127d5094a057864b4ae5807d)):
 
@@ -75,21 +75,21 @@ struct OTLog: Logging.LogHandler {
                 .with(resource: Resource(attributes: resourceAttributes))
                 .build()
         )
-        
+
         LoggingSystem.bootstrap(Self.init)
     }
-    
+
     static func `default`() -> Logging.Logger {
         return Logging.Logger(label: "default")
     }
-    
+
     private var eventProvider: any OpenTelemetryApi.Logger
-    
-    // MARK: - 
+
+    // MARK: -
     // MARK: swift-log LogHandler protocol
     var metadata: Logging.Logger.Metadata
     var logLevel: Logging.Logger.Level
-    
+
     init(label: String) {
         self.eventProvider = OpenTelemetry.instance.loggerProvider
             .loggerBuilder(
@@ -101,7 +101,7 @@ struct OTLog: Logging.LogHandler {
         self.metadata = .init()
         self.logLevel = .debug
     }
-    
+
     subscript(metadataKey key: String) -> Logging.Logger.Metadata.Value? {
         get {
             self.metadata[key]
@@ -110,7 +110,7 @@ struct OTLog: Logging.LogHandler {
             self.metadata[key] = newValue
         }
     }
-    
+
     func log(
         level: Logging.Logger.Level,
         message: Logging.Logger.Message,
@@ -131,7 +131,7 @@ struct OTLog: Logging.LogHandler {
                     }
                 }
             }
-            
+
             // Convert severity from swift-log's enum to opentelemetry's enum
             var severity: OpenTelemetryApi.Severity = .debug
             switch level {
@@ -150,7 +150,7 @@ struct OTLog: Logging.LogHandler {
             case .warning:
                 severity = .warn
             }
-            
+
             self.eventProvider.logRecordBuilder()
                 .setAttributes(attributes)
                 .setSeverity(severity)
@@ -158,7 +158,7 @@ struct OTLog: Logging.LogHandler {
                 .setBody(AttributeValue(message.description))
                 .emit()
     }
-    
+
     // Copied from the built-in OtlpLogExporter, except with Gzip compression specified
     public class GzippedOtlpLogExporter: LogRecordExporter {
         let channel: GRPCChannel
@@ -253,7 +253,7 @@ There's a few important aspects of this code that were key to getting things wor
 1. opentelemetry-swift depends on grpc-swift, but in my setup, grcp-swift wasn't automatically installed. I'm not sure why. When I tried building documentation, the `import GRPC` line errored with "Missing required module CGRPCZlib". Manually adding the grpc-swift package to my project fixed the error.
 2. Although opentelemetry-swift is one package, it outputs many targets, all of which (that you're using) need to be imported.
 3. Setting an API key via an `authorization` header happens via an initializer parameter several data models down. I had to dig into opentelemetry-swift's source to figure out the right place to set headers.
-4. Finally, I found an optional parameter on `ClientConnection.Configuration` that allowed me to enable TLS, which is required for getting through [App Transport Security](https://developer.apple.com/documentation/security/preventing_insecure_network_connections?language=objc). Without this, trying to send logs would (by default) silently fail, or (with some internal logging) print a timeout error: `io.grpc : error=RPC timed out before completing`. 
+4. Finally, I found an optional parameter on `ClientConnection.Configuration` that allowed me to enable TLS, which is required for getting through [App Transport Security](https://developer.apple.com/documentation/security/preventing_insecure_network_connections?language=objc). Without this, trying to send logs would (by default) silently fail, or (with some internal logging) print a timeout error: `io.grpc : error=RPC timed out before completing`.
 
 It felt great to see my first log line show up!
 ![First log line in HyperDX.](https://files.tanagram.app/file/tanagram-data/prod-feifans-blog/streaming-logs-in-swift-to-the-cloud/first-log.png)

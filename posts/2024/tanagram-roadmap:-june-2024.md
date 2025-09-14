@@ -22,6 +22,6 @@ I spent May working on a lot of core functionality for Tanagram:
 * I figured out how to get OpenTelemetry logging working so that I can send log lines to a cloud-hosted logging tool.
 * I added some performance optimizations and fixed several crashes.
 
-I also designed and built a new website at [tanagram.app](https://tanagram.app)! I'm quite happy with the way this turned out.
+I also designed and built a new website at [tanagram.app](https://web.archive.org/web/20240725100059/https://tanagram.app/)! I'm quite happy with the way this turned out.
 # Roadmap: June 2024
 In June, my focus will be getting a few early users to try using Tanagram. I'd like to find out how well it performs on other people's codebases, and get their feedback on whether it's useful and valuable for their use cases.

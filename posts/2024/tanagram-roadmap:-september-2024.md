@@ -9,7 +9,7 @@ excerpt: >-
 ---
 
 
-Tanagram is no longer a nights-and-weekends project — I'm now working on Tanagram full time, with support from [Pear](https://pear.vc).
+[Tanagram](https://tanagram.ai) is no longer a nights-and-weekends project — I'm now working on Tanagram full time, with support from [Pear](https://pear.vc).
 
 I started Tanagram to explore the idea of browsing a [codebase like a database](https://feifan.blog/posts/the-database-inside-your-codebase). For most of the project's existence, I've been building prototypes to explore the feasibility and existing tooling for parsing code and extracting the necessary information to build such a database. Along the way, I've learned a lot about the problems developers run into in development flows, both from my experience at Stripe and from talking to dozens of developers at a range of different companies.
 
@@ -21,4 +21,4 @@ There's a lot I'll have to figure out, including the cadence and contents of fut
 
 Let me know if Tanagram sounds interesting to you, especially if this is a problem space you'd like to work on. I'm looking for a cofounder or founding engineer to help me build — we'll be working with parsers, compiler tooling, graph algorithms, and building polished products we can be proud of.
 
-[^0]: This blog is powered by a custom CMS I built as part of an early experiment many years ago. Unsurprisingly, it's been unmaintained and getting to be a bit long in the tooth.
+[^0]: This blog is powered by a custom CMS I built as part of an early experiment many years ago. Unsurprisingly, it's been unmaintained and getting to be a bit long in the tooth. _(Edit 2025-09-13: no longer true!)_
