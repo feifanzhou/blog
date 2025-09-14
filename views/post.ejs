@@ -49,10 +49,6 @@
                     <div class="magazine-content-body">
                         <%- post.content %>
                     </div>
-
-                    <div class="magazine-page-number">
-                        PAGE <%= Math.floor(Math.random() * 90) + 10 %>
-                    </div>
                 </div>
             </div>
 
@@ -68,18 +64,18 @@
         // Copy code functionality
         document.addEventListener('DOMContentLoaded', function() {
             const copyButtons = document.querySelectorAll('.copy-code-btn');
-            
+
             copyButtons.forEach(button => {
                 button.addEventListener('click', async function() {
                     const codeBlock = this.parentElement.querySelector('code');
                     const text = codeBlock.textContent;
-                    
+
                     try {
                         await navigator.clipboard.writeText(text);
                         const originalText = this.textContent;
                         this.textContent = 'Copied!';
                         this.classList.add('bg-green-600');
-                        
+
                         setTimeout(() => {
                             this.textContent = originalText;
                             this.classList.remove('bg-green-600');
@@ -93,7 +89,7 @@
                     }
                 });
             });
-            
+
             // Show copy buttons on hover
             const codeWrappers = document.querySelectorAll('.code-block-wrapper');
             codeWrappers.forEach(wrapper => {
@@ -101,7 +97,7 @@
                     const button = this.querySelector('.copy-code-btn');
                     if (button) button.classList.remove('opacity-0');
                 });
-                
+
                 wrapper.addEventListener('mouseleave', function() {
                     const button = this.querySelector('.copy-code-btn');
                     if (button) button.classList.add('opacity-0');

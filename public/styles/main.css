@@ -660,9 +660,6 @@ video {
     color: #000;
     background: white;
   }
-.magazine-header {
-    margin-bottom: 2rem;
-  }
 .magazine-masthead {
     display: flex;
     justify-content: space-between;
@@ -682,16 +679,17 @@ video {
     white-space: nowrap;
   }
 .magazine-border {
-    height: 2px;
+    height: 0.5px;
     background: #000;
     width: 100%;
-    margin: 1rem 0 2rem 0;
+    margin: 2rem 0 0 0;
   }
 .magazine-content {
     display: grid;
     grid-template-columns: 200px 1fr;
     gap: 3rem;
     position: relative;
+    padding: 2rem 0 0 0;
   }
 .magazine-content::before {
     content: '';
@@ -699,7 +697,7 @@ video {
     left: 200px;
     top: 0;
     bottom: 0;
-    width: 2px;
+    width: 0.5px;
     background: #000;
     margin-left: -1.5rem;
   }
@@ -801,9 +799,8 @@ video {
     font-weight: bold;
   }
 .magazine-navigation {
-    margin-top: 3rem;
     padding-top: 2rem;
-    border-top: 1px solid #000;
+    border-top: 0.5px solid #000;
   }
 .magazine-nav-link {
     font-size: 0.9rem;
@@ -825,7 +822,7 @@ video {
     grid-template-columns: 3rem 1fr 4rem;
     gap: 1rem;
     align-items: start;
-    border-bottom: 1px solid #ccc;
+    border-bottom: 1px solid #ddd;
     padding-bottom: 1.5rem;
   }
 .magazine-index-item:last-child {
@@ -892,7 +889,7 @@ video {
     .magazine-sidebar {
       order: 2;
       padding-right: 0;
-      border-top: 1px solid #000;
+      border-top: 1px solid #ddd;
       padding-top: 2rem;
     }
 
@@ -1331,7 +1328,7 @@ video {
 /* Custom blog-focused utilities */
 
 /* Code syntax highlighting enhancements */
-pre[class*="language-"] {
+pre[class*='language-'] {
   overflow-x: auto;
   border-radius: 0.5rem;
   --tw-bg-opacity: 1;
@@ -1342,7 +1339,7 @@ pre[class*="language-"] {
   color: rgb(243 244 246 / var(--tw-text-opacity, 1));
 }
 
-code[class*="language-"],
+code[class*='language-'],
 code {
   font-family: JetBrains Mono, monospace;
 }

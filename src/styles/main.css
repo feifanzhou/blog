@@ -7,63 +7,63 @@
   .blog-container {
     @apply max-w-5xl mx-auto px-8 py-6;
   }
-  
+
   .blog-header {
     @apply border-b border-gray-200 pb-6 mb-8;
   }
-  
+
   .blog-title {
     @apply text-3xl md:text-4xl font-bold text-gray-900 mb-2;
   }
-  
+
   .blog-subtitle {
     @apply text-lg text-gray-600;
   }
-  
+
   .blog-meta {
     @apply flex items-center gap-4 text-sm text-gray-500 mb-6;
   }
-  
+
   .blog-content {
     @apply prose prose-lg max-w-none;
   }
-  
+
   .blog-card {
     @apply bg-white rounded-lg border border-gray-200 p-6 hover:shadow-md transition-shadow duration-200;
   }
-  
+
   .blog-card-title {
     @apply text-xl font-semibold text-gray-900 mb-2 hover:text-blue-600 transition-colors;
   }
-  
+
   .blog-card-excerpt {
     @apply text-gray-600 mb-3 line-clamp-3;
   }
-  
+
   .blog-card-meta {
     @apply text-sm text-gray-500;
   }
-  
+
   .blog-nav {
     @apply flex items-center justify-between py-4;
   }
-  
+
   .blog-nav-links {
     @apply flex space-x-6;
   }
-  
+
   .blog-nav-link {
     @apply text-gray-500 hover:text-gray-900 font-normal text-sm transition-colors;
   }
-  
+
   .blog-footer {
     @apply border-t border-gray-200 mt-16 pt-8 pb-6;
   }
-  
+
   .btn-primary {
     @apply bg-blue-600 text-white px-4 py-2 rounded-md font-medium hover:bg-blue-700 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2;
   }
-  
+
   .btn-secondary {
     @apply bg-gray-200 text-gray-900 px-4 py-2 rounded-md font-medium hover:bg-gray-300 transition-colors focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2;
   }
@@ -140,11 +140,11 @@
 }
 
 /* Code syntax highlighting enhancements */
-pre[class*="language-"] {
+pre[class*='language-'] {
   @apply bg-gray-900 text-gray-100 rounded-lg p-4 overflow-x-auto font-mono;
 }
 
-code[class*="language-"],
+code[class*='language-'],
 code {
   @apply font-mono;
 }
@@ -161,10 +161,6 @@ code {
     line-height: 1.4;
     color: #000;
     background: white;
-  }
-
-  .magazine-header {
-    margin-bottom: 2rem;
   }
 
   .magazine-masthead {
@@ -189,10 +185,10 @@ code {
   }
 
   .magazine-border {
-    height: 2px;
+    height: 0.5px;
     background: #000;
     width: 100%;
-    margin: 1rem 0 2rem 0;
+    margin: 2rem 0 0 0;
   }
 
   .magazine-content {
@@ -200,6 +196,7 @@ code {
     grid-template-columns: 200px 1fr;
     gap: 3rem;
     position: relative;
+    padding: 2rem 0 0 0;
   }
 
   .magazine-content::before {
@@ -208,7 +205,7 @@ code {
     left: 200px;
     top: 0;
     bottom: 0;
-    width: 2px;
+    width: 0.5px;
     background: #000;
     margin-left: -1.5rem;
   }
@@ -328,9 +325,8 @@ code {
   }
 
   .magazine-navigation {
-    margin-top: 3rem;
     padding-top: 2rem;
-    border-top: 1px solid #000;
+    border-top: 0.5px solid #000;
   }
 
   .magazine-nav-link {
@@ -356,7 +352,7 @@ code {
     grid-template-columns: 3rem 1fr 4rem;
     gap: 1rem;
     align-items: start;
-    border-bottom: 1px solid #ccc;
+    border-bottom: 1px solid #ddd;
     padding-bottom: 1.5rem;
   }
 
@@ -443,7 +439,7 @@ code {
     .magazine-sidebar {
       order: 2;
       padding-right: 0;
-      border-top: 1px solid #000;
+      border-top: 1px solid #ddd;
       padding-top: 2rem;
     }
 
