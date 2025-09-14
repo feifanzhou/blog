@@ -7,6 +7,7 @@ excerpt: >-
   When I was a kid living at home, I remember my dad, from time to time,
   wistfully looking forward to retiring. I would often ask him why, since
   retirement sounded so boring, but I don't remember ever...
+hero_image: 'https://files.tanagram.app/file/tanagram-data/prod-feifans-blog/eighty-year-career.jpg'
 ---
 
 

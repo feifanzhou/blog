@@ -7,6 +7,7 @@ excerpt: >-
   On a Saturday afternoon last fall, I found myself in front of an expansive
   whiteboard covered in diagrams, tables, and somewhat legible hand-writing. I
   was there with a new coworker, and we had just...
+hero_image: 'https://files.tanagram.app/file/tanagram-data/prod-feifans-blog/leetcodesolutions.png'
 ---
 
 

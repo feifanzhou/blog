@@ -7,6 +7,7 @@ excerpt: >-
   The past few weeks, indefinitely isolated at home, has given me time to think
   about the civilizational optimizations and limitations that COVID-19 has
   revealed and the stunning interconnectedness of...
+hero_image: 'https://files.tanagram.app/file/tanagram-data/prod-feifans-blog/crisis.jpg'
 ---
 
 

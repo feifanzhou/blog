@@ -7,6 +7,7 @@ excerpt: >-
   Throughout The Dream Machine, a history of the early days of computing,
   tinkering and having fun was a recurring theme throughout the decades. I
   wasn't around to experience the early days of...
+hero_image: 'https://files.tanagram.app/file/tanagram-data/prod-feifans-blog/penny-farthing.jpeg'
 ---
 
 

@@ -7,6 +7,7 @@ excerpt: >-
   I've been working on Tanagram, a programming environment that's trying to make
   it easier to browse codebases and build programs by turning code into data.
   This post is a refinement of previous ideas...
+hero_image: 'https://files.tanagram.app/file/tanagram-data/prod-feifans-blog/creating-database-codebase-terminal.png'
 ---
 
 

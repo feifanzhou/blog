@@ -4,6 +4,7 @@ date: '2018-02-20'
 updated: '2018-02-20'
 slug: viewing-imessage-history-on-a-computer
 excerpt: "I occasionally want to go back and browse conversations I’ve had, either to lookup some detail or to revisit a discussion (many of which might become future blog posts \U0001F643). Aside from work Slack, the..."
+hero_image: 'https://files.tanagram.app/file/tanagram-data/prod-feifans-blog/imessage-history-1.jpg'
 ---
 
 

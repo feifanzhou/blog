@@ -7,6 +7,7 @@ excerpt: >-
   Navigating codebases of any meaningful size is difficult. Most of a
   programmer's time is spent jumping through the codebase, reading or skimming
   to build a mental model of the constructs and...
+hero_image: 'https://files.tanagram.app/file/tanagram-data/prod-feifans-blog/joshua-sortino-LqKhnDzSF-8-unsplash.jpg'
 ---
 
 

@@ -7,6 +7,7 @@ excerpt: >-
   In the process of interviewing dozens of junior and intermediate engineers,
   the questions candidates ask implicitly say as much about them as the rest of
   the interview. One question that comes up...
+hero_image: 'https://files.tanagram.app/file/tanagram-data/prod-feifans-blog/tech-stacks.jpg'
 ---
 
 

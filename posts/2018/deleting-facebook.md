@@ -7,6 +7,7 @@ excerpt: >-
   A week ago I deactivated my Facebook. It’s tempting to indulge in hyperbole
   and say that it’s the best thing I’ve done for my life, but I don’t feel any
   different. And I think that’s the point.
+hero_image: 'https://files.tanagram.app/file/tanagram-data/prod-feifans-blog/deleting-facebook.png'
 ---
 
 

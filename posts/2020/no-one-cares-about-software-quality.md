@@ -7,6 +7,7 @@ excerpt: >-
   No one cares about software quality anymore. I mean, yes technically that is
   untrue and there are demonstrably some people who do, but for the most part,
   quality software has become a niche...
+hero_image: 'https://files.tanagram.app/file/tanagram-data/prod-feifans-blog/software-quality.jpg'
 ---
 
 

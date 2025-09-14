@@ -7,6 +7,7 @@ excerpt: >-
   In late 2017, Inadequate Equilibria spread like wildfire across my Twitter
   feed. Having worked through it, I’d now easily rank this book as one of the
   most impactful I’ve ever read on the way I see...
+hero_image: 'https://files.tanagram.app/file/tanagram-data/prod-feifans-blog/inadequate-equilibria-cover.png'
 ---
 
 

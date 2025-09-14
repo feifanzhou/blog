@@ -7,6 +7,7 @@ excerpt: >-
   I've been working on a new way of writing and working with software. Although
   it's still very early along[^3] and looks very much like a toy, I'd like to
   share a demo:
+hero_image: 'https://files.tanagram.app/file/tanagram-data/Screen%20Shot%202021-04-28%20at%208.10.54%20PM.png'
 ---
 
 

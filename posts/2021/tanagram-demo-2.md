@@ -7,6 +7,7 @@ excerpt: >-
   I've been working on a new way of writing and working with software. This is
   the second demo (demo 1 here), and although this, too, looks like a toy, I
   think it's a good encapsulation of what I'm...
+hero_image: 'https://files.tanagram.app/file/tanagram-data/Screen%20Shot%202021-07-23%20at%2020.48.13.png'
 ---
 
 

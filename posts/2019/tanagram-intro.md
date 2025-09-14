@@ -7,6 +7,7 @@ excerpt: >-
   Tanagram is the name of a project idea I’ve been thinking about for a while. I
   trace the idea’s lineage back to a little prototype I built in late 2013. I
   didn’t think much of it at the time, but...
+hero_image: 'https://files.tanagram.app/file/tanagram-data/prod-feifans-blog/tanagram-intro.png'
 ---
 
 

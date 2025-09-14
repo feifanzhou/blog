@@ -4,6 +4,7 @@ date: '2018-01-31'
 updated: '2018-01-31'
 slug: start-with-why
 excerpt: '> This is my blog. There are many like it, but this one is mine.'
+hero_image: 'https://files.tanagram.app/file/tanagram-data/prod-feifans-blog/start-with-why.jpg'
 ---
 
 

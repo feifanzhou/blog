@@ -7,6 +7,7 @@ excerpt: >-
   Despite what some people might want to believe, there is such a thing as bad
   ideas. In the context of building valuable ventures, bad ideas are typically
   bad in a few ways:
+hero_image: 'https://files.tanagram.app/file/tanagram-data/prod-feifans-blog/good-ideas.jpg'
 ---
 
 

@@ -7,6 +7,7 @@ excerpt: >-
   For most of my life I firmly believed that a Computer Science degree wasn’t
   necessary to work as a software engineer; there exists a massive amount of
   resources and practice opportunities to learn...
+hero_image: 'https://files.tanagram.app/file/tanagram-data/prod-feifans-blog/more-to-coding.jpg'
 ---
 
 

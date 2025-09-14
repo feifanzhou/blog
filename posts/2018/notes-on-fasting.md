@@ -7,6 +7,7 @@ excerpt: >-
   The hardest part of not eating for 120 hours and 11 minutes was the boredom.
   From the afternoon of May 17th until a late lunch on May 22nd, it was as if I
   found myself living in a boundless void....
+hero_image: 'https://files.tanagram.app/file/tanagram-data/prod-feifans-blog/fasting.jpg'
 ---
 
 

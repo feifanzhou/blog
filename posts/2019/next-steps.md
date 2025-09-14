@@ -7,6 +7,7 @@ excerpt: >-
   Last week was officially my final week with Trustwork, a seed-stage startup
   where I joined about two years ago as the second engineer. It’s an equitable
   conclusion to a personal journey that began...
+hero_image: 'https://files.tanagram.app/file/tanagram-data/prod-feifans-blog/next-steps.jpg'
 ---
 
 

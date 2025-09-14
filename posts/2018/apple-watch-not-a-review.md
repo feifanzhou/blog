@@ -7,6 +7,7 @@ excerpt: >-
   There seems to be an inverse correlation between how much I pay for an Apple
   product and how much I enjoy using it. My Macbook Pro (2016, Touchbar) is
   functional at best, and unusably glitchy...
+hero_image: 'https://files.tanagram.app/file/tanagram-data/prod-feifans-blog/apple-watch.jpeg'
 ---
 
 

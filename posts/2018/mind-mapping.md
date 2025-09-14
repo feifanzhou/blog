@@ -7,6 +7,7 @@ excerpt: >-
   For many years, I dogmatically resisted using mind maps to take notes or
   organize my thoughts. I was always afraid I’d get “stuck” if I used pen and
   paper — that my map would end up too cramped (or...
+hero_image: 'https://files.tanagram.app/file/tanagram-data/prod-feifans-blog/mindmapping.png'
 ---
 
 

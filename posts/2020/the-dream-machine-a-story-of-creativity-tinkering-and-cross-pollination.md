@@ -4,6 +4,7 @@ date: '2020-09-22'
 updated: '2020-09-22'
 slug: the-dream-machine-a-story-of-creativity-tinkering-and-cross-pollination
 excerpt: '> "Creativity is a function of freedom" – George Pake'
+hero_image: 'https://files.tanagram.app/file/tanagram-data/prod-feifans-blog/dream-machine-cover.png'
 ---
 
 

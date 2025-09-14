@@ -7,6 +7,7 @@ excerpt: >-
   A recent Twitter exchange reminded me that we all perceive the world
   differently. For me, one of these differences is that I’m not really able to
   visualize anything in my mind.
+hero_image: 'https://files.tanagram.app/file/tanagram-data/prod-feifans-blog/aphantasia.jpg'
 ---
 
 

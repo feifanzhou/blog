@@ -7,6 +7,7 @@ excerpt: >-
   I just got back from taking over SXSW with Trustwork. It was an exhausting
   eight-day marathon, complete with an air mattress in the office, questionable
   food, and hundreds of rejections a day. I...
+hero_image: 'https://files.tanagram.app/file/tanagram-data/prod-feifans-blog/sxsw-cover.jpg'
 ---
 
 

@@ -7,6 +7,7 @@ excerpt: >-
   I just got back from taking over SXSW with Trustwork. We ran a scavenger hunt
   with multiple stations giving out free stuff in exchange for user signups.
   This post is the second of two posts on...
+hero_image: 'https://files.tanagram.app/file/tanagram-data/prod-feifans-blog/sxsw-scavenger-hunt.png'
 ---
 
 

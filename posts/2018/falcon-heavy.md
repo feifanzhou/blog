@@ -7,6 +7,7 @@ excerpt: >-
   I didn’t expect to get chills racing down my spine, but I did. Even now, after
   the initial excitement has worn off, I still think the Falcon Heavy launch and
   booster landing is one of the coolest...
+hero_image: 'https://files.tanagram.app/file/tanagram-data/prod-feifans-blog/falcon-heavy.jpg'
 ---
 
 

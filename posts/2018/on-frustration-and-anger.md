@@ -7,6 +7,7 @@ excerpt: >-
   When I was younger, I used to be easily frustrated when things weren’t going
   my way. I would feel a surge of emotion wash over me, and I would indulge in
   that burning warmth while it lasted. The...
+hero_image: 'https://files.tanagram.app/file/tanagram-data/prod-feifans-blog/anger.jpg'
 ---
 
 

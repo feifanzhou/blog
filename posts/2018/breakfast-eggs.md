@@ -7,6 +7,7 @@ excerpt: >-
   I didn’t know how to make eggs for a very long time. That’s mostly because I
   was squeamish about touching raw eggs. It might’ve also been related to my
   inability to crack an egg without making a mess...
+hero_image: 'https://files.tanagram.app/file/tanagram-data/prod-feifans-blog/breakfast-eggs.jpg'
 ---
 
 

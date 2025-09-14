@@ -7,6 +7,7 @@ excerpt: >-
   Most software is feature-ful: built from an amalgamation of individual
   features, which are usually atomic ways to do something specific, arranged in
   a singular interface that has to work for every...
+hero_image: 'https://files.tanagram.app/file/tanagram-data/prod-feifans-blog/featureless.jpg'
 ---
 
 
