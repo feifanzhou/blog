@@ -2,21 +2,23 @@ import MarkdownIt from 'markdown-it';
 import matter from 'gray-matter';
 import Prism from 'prismjs';
 
-// Load language components for syntax highlighting
+// Load language components for syntax highlighting in dependency order
+import 'prismjs/components/prism-markup.js';
+import 'prismjs/components/prism-css.js';
+import 'prismjs/components/prism-clike.js';
 import 'prismjs/components/prism-javascript.js';
 import 'prismjs/components/prism-typescript.js';
 import 'prismjs/components/prism-jsx.js';
 import 'prismjs/components/prism-tsx.js';
 import 'prismjs/components/prism-json.js';
 import 'prismjs/components/prism-bash.js';
-import 'prismjs/components/prism-css.js';
 import 'prismjs/components/prism-scss.js';
-import 'prismjs/components/prism-markup.js';
 import 'prismjs/components/prism-sql.js';
 import 'prismjs/components/prism-python.js';
 import 'prismjs/components/prism-java.js';
 import 'prismjs/components/prism-go.js';
 import 'prismjs/components/prism-rust.js';
+import 'prismjs/components/prism-markup-templating.js';
 import 'prismjs/components/prism-php.js';
 import 'prismjs/components/prism-ruby.js';
 import 'prismjs/components/prism-yaml.js';
@@ -58,8 +60,9 @@ const md: MarkdownIt = new MarkdownIt({
         const highlightedCode = Prism.highlight(str, Prism.languages[normalizedLang], normalizedLang);
         return `<pre class="language-${normalizedLang}"><code class="language-${normalizedLang}">${highlightedCode}</code></pre>`;
       } catch (error) {
-        console.warn(`Failed to highlight code with language "${normalizedLang}":`, error);
-        // Fall through to default
+        console.error(`Failed to highlight code with language "${normalizedLang}":`, error);
+        // Return unhighlighted code with language class
+        return `<pre class="language-${normalizedLang}"><code class="language-${normalizedLang}">${md.utils.escapeHtml(str)}</code></pre>`;
       }
     }
     
