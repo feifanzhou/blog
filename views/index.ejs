@@ -6,94 +6,84 @@
     <title><%= title %></title>
     <link rel="stylesheet" href="/styles/main.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.30.0/themes/prism.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
 </head>
-<body class="h-full bg-gray-50 flex flex-col">
-    <header class="bg-white shadow-sm">
-        <div class="blog-container">
-            <div class="blog-nav">
-                <h1 class="text-2xl font-bold text-gray-900">
-                    <a href="/" class="hover:text-blue-600 transition-colors">My Blog</a>
-                </h1>
-                <nav class="blog-nav-links">
-                    <a href="/" class="blog-nav-link <%= currentPage === 'home' ? 'text-blue-600' : '' %>">Home</a>
-                    <a href="/posts" class="blog-nav-link <%= currentPage === 'posts' ? 'text-blue-600' : '' %>">Posts</a>
-                    <a href="/about" class="blog-nav-link">About</a>
-                </nav>
-            </div>
-        </div>
-    </header>
-    
-    <main class="flex-1">
-<div class="blog-container">
-    <div class="blog-header">
-        <h2 class="blog-title">Welcome to My Blog</h2>
-        <p class="blog-subtitle">Latest thoughts, ideas, and technical musings</p>
-    </div>
-    
-    <% if (posts && posts.length > 0) { %>
-        <div class="space-y-8 mb-12">
-            <% posts.forEach(post => { %>
-                <article class="blog-card">
-                    <h3 class="blog-card-title">
-                        <a href="/posts/<%= post.meta.slug %>" class="hover:text-blue-600 transition-colors">
-                            <%= post.meta.title %>
-                        </a>
-                    </h3>
-                    <p class="blog-card-excerpt"><%= post.excerpt %></p>
-                    <div class="blog-card-meta">
-                        <span><%= new Date(post.meta.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' }) %></span>
-                        <span>·</span>
-                        <span><%= post.readingTime %> min read</span>
-                        <% if (post.meta.tags && post.meta.tags.length > 0) { %>
-                            <span>·</span>
-                            <% post.meta.tags.slice(0, 2).forEach((tag, index) => { %>
-                                <a href="/labeled/<%= tag.toLowerCase() %>" class="text-blue-600 hover:text-blue-800 text-sm">
-                                    <%= tag %><%= index < Math.min(post.meta.tags.length, 2) - 1 ? ',' : '' %>
-                                </a>
-                            <% }); %>
+<body class="h-full bg-white flex flex-col font-mono">
+    <main class="flex-1 max-w-5xl mx-auto px-8 py-12">
+        <article class="magazine-layout">
+            <header class="magazine-header">
+                <div class="magazine-masthead">
+                    <h1 class="magazine-title">
+                        BLOG INDEX
+                    </h1>
+                    <div class="magazine-date">
+                        <%= new Date().toISOString().split('T')[0] %>
+                    </div>
+                </div>
+                <div class="magazine-border"></div>
+            </header>
+
+            <div class="magazine-content">
+                <div class="magazine-sidebar">
+                    <div class="magazine-section-label">
+                        LATEST<br>
+                        ARTICLES<br>
+                        IN<br>
+                        TECHNICAL<br>
+                        MACHINERY
+                    </div>
+
+                    <div class="magazine-section-number">
+                        Index<br>
+                        <%= new Date().getMonth() + 1 %>.<%= String(new Date().getDate()).padStart(2, '0') %>
+                    </div>
+                </div>
+
+                <div class="magazine-text">
+                    <div class="magazine-content-body">
+                        <% if (posts && posts.length > 0) { %>
+                            <div class="magazine-index">
+                                <% posts.forEach((post, index) => { %>
+                                    <div class="magazine-index-item">
+                                        <div class="magazine-index-number"><%= String(index + 1).padStart(2, '0') %>.</div>
+                                        <div class="magazine-index-content">
+                                            <h3 class="magazine-index-title">
+                                                <a href="/posts/<%= post.meta.slug %>"><%= post.meta.title.toUpperCase() %></a>
+                                            </h3>
+                                            <div class="magazine-index-meta">
+                                                <span class="magazine-index-date"><%= new Date(post.meta.date).toISOString().split('T')[0] %></span>
+                                                <% if (post.meta.tags && post.meta.tags.length > 0) { %>
+                                                    <span class="magazine-index-separator">—</span>
+                                                    <span class="magazine-index-tag"><%= post.meta.tags[0].toUpperCase() %></span>
+                                                <% } %>
+                                            </div>
+                                            <% if (post.meta.excerpt || post.excerpt) { %>
+                                                <p class="magazine-index-excerpt"><%= post.meta.excerpt || post.excerpt %></p>
+                                            <% } %>
+                                        </div>
+                                        <div class="magazine-index-page">
+                                            <%= Math.floor(Math.random() * 90) + 10 %>
+                                        </div>
+                                    </div>
+                                <% }); %>
+                            </div>
+                        <% } else { %>
+                            <div class="magazine-no-posts">
+                                <p>NO ARTICLES AVAILABLE AT THIS TIME.</p>
+                                <p>CHECK BACK SOON FOR NEW TECHNICAL DOCUMENTATION.</p>
+                            </div>
                         <% } %>
                     </div>
-                </article>
-            <% }); %>
-        </div>
-    <% } else { %>
-        <div class="text-center py-12">
-            <h3 class="text-lg font-medium text-gray-900 mb-2">No posts yet</h3>
-            <p class="text-gray-600">Check back soon for new content!</p>
-        </div>
-    <% } %>
-</div>
 
-<% if (categories && categories.length > 0) { %>
-<div class="bg-white border-t border-gray-200 mt-12">
-    <div class="blog-container py-8">
-        <h3 class="text-lg font-semibold text-gray-900 mb-4">Popular Categories</h3>
-        <div class="flex flex-wrap gap-2">
-            <% categories.forEach(cat => { %>
-                <a href="/labeled/<%= cat.category %>" class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-blue-100 text-blue-800 hover:bg-blue-200 transition-colors">
-                    <%= cat.category %> 
-                    <span class="ml-1 text-blue-600">(<%= cat.count %>)</span>
-                </a>
-            <% }); %>
-        </div>
-    </div>
-</div>
-<% } %>
-    </main>
-    
-    <footer class="bg-white border-t border-gray-200 mt-12">
-        <div class="blog-container">
-            <div class="blog-footer">
-                <div class="flex flex-col md:flex-row justify-between items-center">
-                    <p class="text-gray-600 mb-4 md:mb-0">&copy; 2025 My Blog. Built with Koa.js and Tailwind CSS.</p>
-                    <div class="flex space-x-4">
-                        <a href="/feed.xml" class="text-gray-500 hover:text-gray-700 transition-colors">RSS</a>
-                        <a href="/sitemap.xml" class="text-gray-500 hover:text-gray-700 transition-colors">Sitemap</a>
+                    <div class="magazine-page-number">
+                        INDEX PAGE 01
                     </div>
                 </div>
             </div>
-        </div>
-    </footer>
+        </article>
+    </main>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.30.0/components/prism-core.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.30.0/plugins/autoloader/prism-autoloader.min.js"></script>

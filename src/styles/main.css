@@ -5,7 +5,7 @@
 /* Custom blog-focused utilities */
 @layer components {
   .blog-container {
-    @apply max-w-4xl mx-auto px-6 py-8;
+    @apply max-w-5xl mx-auto px-8 py-6;
   }
   
   .blog-header {
@@ -45,7 +45,7 @@
   }
   
   .blog-nav {
-    @apply flex items-center justify-between py-4 border-b border-gray-200;
+    @apply flex items-center justify-between py-4;
   }
   
   .blog-nav-links {
@@ -53,7 +53,7 @@
   }
   
   .blog-nav-link {
-    @apply text-gray-600 hover:text-gray-900 font-medium transition-colors;
+    @apply text-gray-500 hover:text-gray-900 font-normal text-sm transition-colors;
   }
   
   .blog-footer {
@@ -66,6 +66,67 @@
   
   .btn-secondary {
     @apply bg-gray-200 text-gray-900 px-4 py-2 rounded-md font-medium hover:bg-gray-300 transition-colors focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2;
+  }
+
+  /* Post list styles */
+  .post-list {
+    @apply space-y-0 max-w-4xl;
+  }
+
+  .post-item {
+    @apply flex items-center justify-between py-6 hover:bg-gray-50/50 transition-colors duration-150;
+  }
+
+  .post-content {
+    @apply flex-1 min-w-0 pr-4;
+  }
+
+  .post-title {
+    @apply text-lg font-normal text-gray-900 mb-2 leading-tight;
+  }
+
+  .post-title a {
+    @apply text-gray-900 hover:text-blue-600 transition-colors duration-150 no-underline;
+  }
+
+  .post-meta-inline {
+    @apply flex items-center gap-3 text-sm;
+  }
+
+  .post-author {
+    @apply text-xs font-normal text-gray-400 uppercase tracking-wider;
+  }
+
+  .post-tag {
+    @apply inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium;
+  }
+
+  .post-tag.featured {
+    @apply bg-green-100 text-green-700;
+  }
+
+  .post-tag.agentic-engineering {
+    @apply bg-blue-100 text-blue-700;
+  }
+
+  .post-tag.zed-decoded {
+    @apply bg-purple-100 text-purple-700;
+  }
+
+  .post-tag.guest {
+    @apply bg-orange-100 text-orange-700;
+  }
+
+  .post-right {
+    @apply flex items-center gap-4 flex-shrink-0;
+  }
+
+  .post-avatar {
+    @apply w-8 h-8 rounded-full flex items-center justify-center text-white text-sm font-medium;
+  }
+
+  .post-date {
+    @apply text-sm text-gray-500 font-normal tabular-nums;
   }
 }
 
@@ -93,24 +154,326 @@ code {
   @apply font-mono;
 }
 
+/* Magazine-style layout */
+@layer components {
+  .magazine-layout {
+    font-family: 'Courier Prime', 'Courier New', monospace;
+    line-height: 1.4;
+    color: #000;
+    background: white;
+  }
+
+  .magazine-header {
+    margin-bottom: 2rem;
+  }
+
+  .magazine-masthead {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 0.5rem;
+  }
+
+  .magazine-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin: 0;
+    line-height: 1.2;
+  }
+
+  .magazine-date {
+    font-size: 1rem;
+    font-weight: normal;
+    white-space: nowrap;
+  }
+
+  .magazine-border {
+    height: 2px;
+    background: #000;
+    width: 100%;
+    margin: 1rem 0 2rem 0;
+  }
+
+  .magazine-content {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 3rem;
+    position: relative;
+  }
+
+  .magazine-content::before {
+    content: '';
+    position: absolute;
+    left: 200px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: #000;
+    margin-left: -1.5rem;
+  }
+
+  .magazine-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding-right: 1rem;
+  }
+
+  .magazine-section-label {
+    font-size: 0.9rem;
+    font-weight: bold;
+    line-height: 1.3;
+    text-align: left;
+    letter-spacing: 1px;
+  }
+
+  .magazine-section-number {
+    font-size: 0.85rem;
+    line-height: 1.3;
+  }
+
+  .magazine-text {
+    position: relative;
+    min-height: 70vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .magazine-content-body {
+    flex: 1;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    text-align: justify;
+    max-width: none;
+  }
+
+  .magazine-content-body h1,
+  .magazine-content-body h2,
+  .magazine-content-body h3,
+  .magazine-content-body h4,
+  .magazine-content-body h5,
+  .magazine-content-body h6 {
+    font-family: 'Courier Prime', 'Courier New', monospace;
+    font-weight: bold;
+    margin: 2rem 0 1rem 0;
+    line-height: 1.3;
+  }
+
+  .magazine-content-body p {
+    margin-bottom: 1rem;
+    text-indent: 1rem;
+  }
+
+  .magazine-content-body p:first-child {
+    text-indent: 0;
+  }
+
+  .magazine-content-body strong,
+  .magazine-content-body b {
+    font-style: italic;
+    font-weight: normal;
+  }
+
+  .magazine-content-body em,
+  .magazine-content-body i {
+    font-style: italic;
+  }
+
+  .magazine-content-body code {
+    font-family: 'Courier Prime', 'Courier New', monospace;
+    background: none;
+    padding: 0;
+    color: inherit;
+    font-size: inherit;
+  }
+
+  .magazine-content-body pre {
+    font-family: 'Courier Prime', 'Courier New', monospace;
+    background: #f5f5f5;
+    border: 1px solid #ccc;
+    padding: 1rem;
+    margin: 1rem 0;
+    overflow-x: auto;
+  }
+
+  .magazine-content-body ul,
+  .magazine-content-body ol {
+    margin: 1rem 0;
+    padding-left: 2rem;
+  }
+
+  .magazine-content-body blockquote {
+    border-left: 4px solid #000;
+    margin: 1rem 0;
+    padding-left: 1rem;
+    font-style: italic;
+  }
+
+  .magazine-page-number {
+    text-align: right;
+    font-size: 0.9rem;
+    margin-top: 2rem;
+    font-weight: bold;
+  }
+
+  .magazine-navigation {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid #000;
+  }
+
+  .magazine-nav-link {
+    font-size: 0.9rem;
+    color: #000;
+    text-decoration: none;
+    font-weight: normal;
+  }
+
+  .magazine-nav-link:hover {
+    text-decoration: underline;
+  }
+
+  /* Homepage index styles */
+  .magazine-index {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .magazine-index-item {
+    display: grid;
+    grid-template-columns: 3rem 1fr 4rem;
+    gap: 1rem;
+    align-items: start;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 1.5rem;
+  }
+
+  .magazine-index-item:last-child {
+    border-bottom: none;
+  }
+
+  .magazine-index-number {
+    font-size: 0.9rem;
+    font-weight: bold;
+    text-align: right;
+    padding-top: 0.2rem;
+  }
+
+  .magazine-index-content {
+    min-width: 0;
+  }
+
+  .magazine-index-title {
+    font-size: 1.1rem;
+    font-weight: bold;
+    line-height: 1.3;
+    margin: 0 0 0.5rem 0;
+  }
+
+  .magazine-index-title a {
+    color: #000;
+    text-decoration: none;
+  }
+
+  .magazine-index-title a:hover {
+    text-decoration: underline;
+  }
+
+  .magazine-index-meta {
+    font-size: 0.8rem;
+    margin-bottom: 0.5rem;
+    color: #666;
+  }
+
+  .magazine-index-separator {
+    margin: 0 0.5rem;
+  }
+
+  .magazine-index-tag {
+    font-weight: bold;
+  }
+
+  .magazine-index-excerpt {
+    font-size: 0.85rem;
+    line-height: 1.4;
+    margin: 0;
+    color: #333;
+  }
+
+  .magazine-index-page {
+    font-size: 0.9rem;
+    font-weight: bold;
+    text-align: center;
+    padding-top: 0.2rem;
+  }
+
+  .magazine-no-posts {
+    text-align: center;
+    padding: 3rem 0;
+  }
+
+  .magazine-no-posts p {
+    margin: 1rem 0;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+  }
+
+  @media (max-width: 768px) {
+    .magazine-content {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    .magazine-content::before {
+      display: none;
+    }
+
+    .magazine-sidebar {
+      order: 2;
+      padding-right: 0;
+      border-top: 1px solid #000;
+      padding-top: 2rem;
+    }
+
+    .magazine-text {
+      order: 1;
+    }
+
+    .magazine-title {
+      font-size: 1.2rem;
+    }
+
+    .magazine-index-item {
+      grid-template-columns: 2rem 1fr 3rem;
+      gap: 0.75rem;
+    }
+
+    .magazine-index-title {
+      font-size: 1rem;
+    }
+  }
+}
+
 /* Dark mode styles */
 @media (prefers-color-scheme: dark) {
   .blog-card {
     @apply bg-gray-800 border-gray-700;
   }
-  
+
   .blog-card-title {
     @apply text-gray-100 hover:text-blue-400;
   }
-  
+
   .blog-card-excerpt {
     @apply text-gray-300;
   }
-  
+
   .blog-title {
     @apply text-gray-100;
   }
-  
+
   .blog-subtitle {
     @apply text-gray-300;
   }
