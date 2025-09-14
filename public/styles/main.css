@@ -645,14 +645,6 @@ video {
   --tw-text-opacity: 1;
   color: rgb(17 24 39 / var(--tw-text-opacity, 1));
 }
-.blog-footer {
-  margin-top: 4rem;
-  border-top-width: 1px;
-  --tw-border-opacity: 1;
-  border-color: rgb(229 231 235 / var(--tw-border-opacity, 1));
-  padding-top: 2rem;
-  padding-bottom: 1.5rem;
-}
 /* Post list styles */
 .magazine-layout {
     font-family: 'JetBrains Mono', 'Courier New', monospace;
@@ -689,7 +681,7 @@ video {
     grid-template-columns: 200px 1fr;
     gap: 3rem;
     position: relative;
-    padding: 2rem 0 0 0;
+    padding: 2rem 0;
   }
 .magazine-content::before {
     content: '';
@@ -1191,6 +1183,9 @@ video {
 .pr-1 {
   padding-right: 0.25rem;
 }
+.pt-12 {
+  padding-top: 3rem;
+}
 .pt-4 {
   padding-top: 1rem;
 }
@@ -1319,12 +1314,12 @@ video {
 /* Global link styles */
 a {
   text-decoration: underline;
-  text-decoration-color: color(display-p3 .985 .766 0);
+  text-decoration-color: color(display-p3 0.985 0.766 0);
   text-underline-offset: 4px;
 }
 
 a:hover {
-  text-decoration-color: color(display-p3 .985 .766 0);
+  text-decoration-color: color(display-p3 0.985 0.766 0);
   opacity: 0.8;
 }
 
@@ -1388,37 +1383,52 @@ code {
     color: rgb(209 213 219 / var(--tw-text-opacity, 1));
   }
 }
+
+.blog-footer {
+  border-top: 0.5px solid #000;
+  padding-left: 0;
+  padding-right: 0;
+}
+
 .hover\:border-gray-300:hover {
   --tw-border-opacity: 1;
   border-color: rgb(209 213 219 / var(--tw-border-opacity, 1));
 }
+
 .hover\:bg-blue-700:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(29 78 216 / var(--tw-bg-opacity, 1));
 }
+
 .hover\:bg-gray-200:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(229 231 235 / var(--tw-bg-opacity, 1));
 }
+
 .hover\:bg-gray-50:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(249 250 251 / var(--tw-bg-opacity, 1));
 }
+
 .hover\:text-blue-600:hover {
   --tw-text-opacity: 1;
   color: rgb(37 99 235 / var(--tw-text-opacity, 1));
 }
+
 .hover\:text-blue-800:hover {
   --tw-text-opacity: 1;
   color: rgb(30 64 175 / var(--tw-text-opacity, 1));
 }
+
 .hover\:text-gray-700:hover {
   --tw-text-opacity: 1;
   color: rgb(55 65 81 / var(--tw-text-opacity, 1));
 }
+
 .hover\:opacity-100:hover {
   opacity: 1;
 }
+
 @media (min-width: 640px) {
 
   .sm\:px-0 {
@@ -1426,6 +1436,7 @@ code {
     padding-right: 0px;
   }
 }
+
 @media (min-width: 768px) {
 
   .md\:-mt-px {

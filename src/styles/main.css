@@ -5,12 +5,12 @@
 /* Global link styles */
 a {
   text-decoration: underline;
-  text-decoration-color: color(display-p3 .985 .766 0);
+  text-decoration-color: color(display-p3 0.985 0.766 0);
   text-underline-offset: 4px;
 }
 
 a:hover {
-  text-decoration-color: color(display-p3 .985 .766 0);
+  text-decoration-color: color(display-p3 0.985 0.766 0);
   opacity: 0.8;
 }
 
@@ -66,10 +66,6 @@ a:hover {
 
   .blog-nav-link {
     @apply text-gray-500 hover:text-gray-900 font-normal text-sm transition-colors;
-  }
-
-  .blog-footer {
-    @apply border-t border-gray-200 mt-16 pt-8 pb-6;
   }
 
   .btn-primary {
@@ -208,7 +204,7 @@ code {
     grid-template-columns: 200px 1fr;
     gap: 3rem;
     position: relative;
-    padding: 2rem 0 0 0;
+    padding: 2rem 0;
   }
 
   .magazine-content::before {
@@ -484,4 +480,10 @@ code {
   .blog-subtitle {
     @apply text-gray-300;
   }
+}
+
+.blog-footer {
+  border-top: 0.5px solid #000;
+  padding-left: 0;
+  padding-right: 0;
 }

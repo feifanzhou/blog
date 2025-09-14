@@ -11,12 +11,12 @@
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
 </head>
 <body class="h-full bg-white flex flex-col font-mono">
-    <main class="flex-1 max-w-5xl mx-auto px-8 py-12">
+    <main class="flex-1 max-w-5xl mx-auto px-8 pt-12">
         <article class="magazine-layout">
             <header class="magazine-header">
                 <div class="magazine-masthead">
                     <h1 class="magazine-title">
-                        BLOG INDEX
+                        FEIFAN ZHOU • BLOG INDEX
                     </h1>
                     <div class="magazine-date">
                         <%= new Date().toISOString().split('T')[0] %>
@@ -81,6 +81,15 @@
             </div>
         </article>
     </main>
+
+    <footer class="">
+        <div class="blog-container blog-footer py-12">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-500 mb-4 md:mb-0">Written and implemented in San Francisco</p>
+                <p class="text-gray-500"><a href="https://tanagram.ai/" target="_blank">Check out Tanagram &#8599;</a></p>
+            </div>
+        </div>
+    </footer>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.30.0/components/prism-core.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.30.0/plugins/autoloader/prism-autoloader.min.js"></script>
