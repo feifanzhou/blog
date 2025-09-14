@@ -282,6 +282,7 @@ code {
   }
 
   .magazine-content-body p {
+    color: #444;
     margin-bottom: 1rem;
     text-indent: 1rem;
   }
