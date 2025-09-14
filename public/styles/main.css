@@ -804,12 +804,7 @@ video {
   }
 .magazine-nav-link {
     font-size: 0.9rem;
-    color: #000;
-    text-decoration: none;
     font-weight: normal;
-  }
-.magazine-nav-link:hover {
-    text-decoration: underline;
   }
 /* Homepage index styles */
 .magazine-index {
@@ -844,11 +839,7 @@ video {
     margin: 0 0 0.5rem 0;
   }
 .magazine-index-title a {
-    color: #000;
     text-decoration: none;
-  }
-.magazine-index-title a:hover {
-    text-decoration: underline;
   }
 .magazine-index-meta {
     font-size: 0.8rem;
@@ -1323,6 +1314,18 @@ video {
   transition-property: opacity;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
+}
+
+/* Global link styles */
+a {
+  text-decoration: underline;
+  text-decoration-color: color(display-p3 .985 .766 0);
+  text-underline-offset: 4px;
+}
+
+a:hover {
+  text-decoration-color: color(display-p3 .985 .766 0);
+  opacity: 0.8;
 }
 
 /* Custom blog-focused utilities */

@@ -2,6 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Global link styles */
+a {
+  text-decoration: underline;
+  text-decoration-color: color(display-p3 .985 .766 0);
+  text-underline-offset: 4px;
+}
+
+a:hover {
+  text-decoration-color: color(display-p3 .985 .766 0);
+  opacity: 0.8;
+}
+
 /* Custom blog-focused utilities */
 @layer components {
   .blog-container {
@@ -86,7 +98,7 @@
   }
 
   .post-title a {
-    @apply text-gray-900 hover:text-blue-600 transition-colors duration-150 no-underline;
+    @apply text-gray-900 transition-colors duration-150;
   }
 
   .post-meta-inline {
@@ -331,13 +343,7 @@ code {
 
   .magazine-nav-link {
     font-size: 0.9rem;
-    color: #000;
-    text-decoration: none;
     font-weight: normal;
-  }
-
-  .magazine-nav-link:hover {
-    text-decoration: underline;
   }
 
   /* Homepage index styles */
@@ -379,12 +385,7 @@ code {
   }
 
   .magazine-index-title a {
-    color: #000;
     text-decoration: none;
-  }
-
-  .magazine-index-title a:hover {
-    text-decoration: underline;
   }
 
   .magazine-index-meta {
