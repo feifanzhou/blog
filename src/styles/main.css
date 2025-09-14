@@ -303,6 +303,16 @@ code {
     padding-left: 2rem;
   }
 
+  .magazine-content-body ul {
+    list-style-type: disc;
+    list-style-position: outside;
+  }
+
+  .magazine-content-body ol {
+    list-style-type: decimal;
+    list-style-position: outside;
+  }
+
   .magazine-content-body blockquote {
     border-left: 4px solid #000;
     margin: 1rem 0;
