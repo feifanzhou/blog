@@ -18,4 +18,5 @@ export interface BlogPostMeta {
   tags: string[];
   author: string;
   excerpt?: string;
+  hero_image?: string;
 }
