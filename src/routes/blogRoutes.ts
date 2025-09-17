@@ -48,6 +48,9 @@ router.get('/posts/:slug', async (ctx: Context) => {
     const fullTitle = MarkdownProcessor.generatePageTitle(post.meta.title);
     const description = MarkdownProcessor.generateMetaDescription(post.excerpt);
 
+    // Use hero_image if available, otherwise generate dynamic og:image URL
+    const ogImage = post.meta.hero_image || `${ctx.protocol}://${ctx.host}/og-image/${post.meta.slug}.png`;
+
     setSEO(ctx, {
       title: fullTitle,
       description,
@@ -55,7 +58,7 @@ router.get('/posts/:slug', async (ctx: Context) => {
       author: post.meta.author,
       type: 'article',
       publishedTime: new Date(post.meta.date).toISOString(),
-      ...(post.meta.hero_image && { image: post.meta.hero_image }),
+      image: ogImage,
     });
 
     await ctx.render('post', {

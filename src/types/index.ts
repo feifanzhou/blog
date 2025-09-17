@@ -17,6 +17,7 @@ export interface BlogPostMeta {
   published: boolean;
   tags: string[];
   author: string;
+  slug: string;
   excerpt?: string;
   hero_image?: string;
 }

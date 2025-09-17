@@ -27,6 +27,7 @@
     "@tailwindcss/typography": "^0.5.16",
     "@types/prismjs": "^1.26.5",
     "autoprefixer": "^10.4.21",
+    "canvas": "^3.2.0",
     "glob": "^11.0.3",
     "gray-matter": "^4.0.3",
     "koa": "^3.0.1",
