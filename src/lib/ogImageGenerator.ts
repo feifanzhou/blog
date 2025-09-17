@@ -93,12 +93,15 @@ export class OGImageGenerator {
   }
 
   /**
-   * Draw background with dot grid pattern
+   * Draw background with dot grid pattern and 3D sphere
    */
   private static drawBackground(ctx: CanvasRenderingContext2D): void {
     // Fill with cream/off-white background
     ctx.fillStyle = '#FEFEFE';
     ctx.fillRect(0, 0, this.CANVAS_WIDTH, this.CANVAS_HEIGHT);
+
+    // Add subtle 3D dithered cubes
+    this.drawDitheredCubes(ctx);
 
     // Add subtle dot grid pattern
     const dotSize = 1;
@@ -112,6 +115,152 @@ export class OGImageGenerator {
         ctx.fill();
       }
     }
+  }
+
+  /**
+   * Draw subtle dithered 3D cubes in the background
+   */
+  private static drawDitheredCubes(ctx: CanvasRenderingContext2D): void {
+    // Create dithering pattern
+    const ditherPattern = [
+      [0, 8, 2, 10],
+      [12, 4, 14, 6],
+      [3, 11, 1, 9],
+      [15, 7, 13, 5]
+    ];
+
+    // Draw multiple cubes clustered in the lower-right corner
+    const cubes = [
+      { x: this.CANVAS_WIDTH - 200, y: this.CANVAS_HEIGHT - 180, size: 60 },
+      { x: this.CANVAS_WIDTH - 120, y: this.CANVAS_HEIGHT - 160, size: 55 },
+      { x: this.CANVAS_WIDTH - 80, y: this.CANVAS_HEIGHT - 100, size: 45 },
+      { x: this.CANVAS_WIDTH - 160, y: this.CANVAS_HEIGHT - 80, size: 40 },
+    ];
+
+    cubes.forEach(cube => {
+      this.drawSingleDitheredCube(ctx, cube.x, cube.y, cube.size, ditherPattern);
+    });
+  }
+
+  /**
+   * Draw a single dithered 3D cube with proper isometric projection
+   */
+  private static drawSingleDitheredCube(
+    ctx: CanvasRenderingContext2D,
+    centerX: number,
+    centerY: number,
+    size: number,
+    ditherPattern: number[][]
+  ): void {
+    const halfSize = size / 2;
+    
+    // Proper isometric projection angles (30-degree)
+    const isoX = size * 0.866; // cos(30°) * size
+    const isoY = size * 0.5;   // sin(30°) * size
+
+    // Define the three visible faces with proper isometric coordinates
+    const faces = [
+      {
+        // Top face (brightest)
+        intensity: 0.8,
+        points: [
+          { x: centerX, y: centerY - halfSize },                    // front
+          { x: centerX + isoX * 0.5, y: centerY - halfSize - isoY * 0.5 }, // right
+          { x: centerX, y: centerY - halfSize - isoY },             // back
+          { x: centerX - isoX * 0.5, y: centerY - halfSize - isoY * 0.5 }, // left
+        ]
+      },
+      {
+        // Left face (medium)
+        intensity: 0.5,
+        points: [
+          { x: centerX - isoX * 0.5, y: centerY - halfSize - isoY * 0.5 }, // top-left
+          { x: centerX, y: centerY - halfSize - isoY },                     // top-back
+          { x: centerX, y: centerY + halfSize - isoY },                     // bottom-back
+          { x: centerX - isoX * 0.5, y: centerY + halfSize - isoY * 0.5 }, // bottom-left
+        ]
+      },
+      {
+        // Right face (darkest)
+        intensity: 0.3,
+        points: [
+          { x: centerX, y: centerY - halfSize - isoY },                     // top-back
+          { x: centerX + isoX * 0.5, y: centerY - halfSize - isoY * 0.5 }, // top-right
+          { x: centerX + isoX * 0.5, y: centerY + halfSize - isoY * 0.5 }, // bottom-right
+          { x: centerX, y: centerY + halfSize - isoY },                     // bottom-back
+        ]
+      }
+    ];
+
+    // Draw each face with dithering
+    faces.forEach(face => {
+      this.drawDitheredFace(ctx, face.points, face.intensity, ditherPattern);
+    });
+  }
+
+  /**
+   * Draw a dithered face of a cube
+   */
+  private static drawDitheredFace(
+    ctx: CanvasRenderingContext2D,
+    points: { x: number; y: number }[],
+    baseIntensity: number,
+    ditherPattern: number[][]
+  ): void {
+    // Find bounding box
+    const minX = Math.floor(Math.min(...points.map(p => p.x)));
+    const maxX = Math.ceil(Math.max(...points.map(p => p.x)));
+    const minY = Math.floor(Math.min(...points.map(p => p.y)));
+    const maxY = Math.ceil(Math.max(...points.map(p => p.y)));
+
+    // Draw pixel by pixel with dithering
+    for (let y = minY; y < maxY; y += 2) {
+      for (let x = minX; x < maxX; x += 2) {
+        if (this.isPointInPolygon(x, y, points)) {
+          // Apply subtle dithering
+          const ditherX = Math.abs(x) % 4;
+          const ditherY = Math.abs(y) % 4;
+          const ditherThreshold = (ditherPattern[ditherY]?.[ditherX] ?? 0) / 16.0;
+          
+          // Add slight texture variation
+          const positionVariance = (Math.sin(x * 0.05) * Math.cos(y * 0.05)) * 0.05;
+          const intensity = baseIntensity + positionVariance;
+          
+          if (intensity > ditherThreshold + 0.4) {
+            // Subtle but visible opacity
+            const alpha = Math.min(0.1, intensity * 0.15);
+            ctx.fillStyle = `rgba(0, 0, 0, ${alpha})`;
+            ctx.fillRect(x, y, 2, 2);
+          }
+        }
+      }
+    }
+  }
+
+  /**
+   * Check if a point is inside a polygon using ray casting
+   */
+  private static isPointInPolygon(x: number, y: number, points: { x: number; y: number }[]): boolean {
+    let inside = false;
+    const n = points.length;
+    
+    for (let i = 0, j = n - 1; i < n; j = i++) {
+      const pointI = points[i];
+      const pointJ = points[j];
+      
+      if (!pointI || !pointJ) continue;
+      
+      const xi = pointI.x;
+      const yi = pointI.y;
+      const xj = pointJ.x;
+      const yj = pointJ.y;
+      
+      if (((yi > y) !== (yj > y)) && (x < (xj - xi) * (y - yi) / (yj - yi) + xi)) {
+        inside = !inside;
+      }
+    }
+    
+    return inside;
   }
 
   /**
