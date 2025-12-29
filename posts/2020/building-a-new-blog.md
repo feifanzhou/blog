@@ -31,7 +31,11 @@ What's the point of doing all this? To [quote](https://youtu.be/TTM_b7EJg5E?t=43
 Over time I'm planning on exploring and building more reusable data models and primitives to provide a consistent way to build boring software. Much more to come!
 
 [^0]: Including footnote support
+
 [^1]: Stack specs for the curious: Elixir + Postgres + Vanilla JS + Gigalixir + Backblaze B2 + Cloudflare.
+
 [^2]: I've [previously written](/posts/tanagram-intro) about Tanagram.
+
 [^3]: Joe Armstrong (1950–2019) was a much-beloved computer scientist in the field of distributed computing systems. He's perhaps best known for being one of the creators of the Erlang programming language (which Elixir is built upon).
+
 [^4]: There's no good reason why my `PostList` object _doesn't_ adhere to the Connections spec other than the fact that I forgot it existed until just now 😅 Rather than introducing another format, I'll probably update my implementation to follow the Connections spec.

@@ -98,16 +98,29 @@ end
 
 
 [^3]: Much of what I'll describe below hasn't been implemented yet 😬
+
 [^0]: The name is derived from the tangram puzzle, in which you get seven blocks, each a simple shape, that you arrange into [intricate outlines](https://mathigon.org/tangram). I added an extra syllable to the name (tan-a-gram) because for the longest time that's how I pronounced it in my head.
+
 [^2]: I was talking to a friend about Tanagram; this friend isn't a programmer but works in a software-adjacent job and has occasionally taken a look through programming tutorials. I said, "you know how you look through a programming tutorial, and you feel like you understand what's going on … and then you have no idea where to start applying that to what you're working on right now?" He eagerly agreed. My hope is that a batteries-provided environment that makes it easy to run Lego-sized blocks of code can also enable software-adjacent knowledge workers to cobble together bespoke software tools to help solve problems or automate workflows.
+
 [^4]: And probably iPad.
+
 [^5]: It would be great to support UI extensions (i.e. plug-ins) in the reference UI.
+
 [^6]: Like a Jupyter kernel.
+
 [^7]: E.g. "all commands that return a `Post.Item`" or perhaps "all commands that take a `User` and access its `email` field".
+
 [^8]: See the [documentation for the built-in `rpc` module](https://erlang.org/doc/man/rpc.html) for details on all the things you can do.
+
 [^9]: If you've read [The Database Inside Your Codebase](https://feifan.blog/posts/the-database-inside-your-codebase), you'll know I think this is a big deal! In typical codebases, event consumers might be denoted by naming and filesystem conventions, but there's typically nothing (except tribal knowledge) linking the code that emits events with the code that consumes events.
+
 [^10]: An obvious next step would be to use the GUI to configure input values, and then click a button to "Copy as shell command". This could be extended to inputs that aren't just form inputs — see [Exiftool](https://www.reddit.com/r/linuxquestions/comments/2yiked/i_want_to_batch_extract_the_exif_datetime_from_10/cp9ze7u/?utm_source=share&utm_medium=web2x&context=3) for an example of a shell command with a fiendishly complex syntax for its inputs that could probably be made much clearer with a (custom) GUI.
+
 [^11]: Inspired by the browsers in Smalltalk environments like Pharo.
+
 [^12]: Via [Wikipedia](https://en.wikipedia.org/wiki/Focal_point_(game_theory)): "…a solution that people tend to choose by default in the absence of communication." One possible example — a built-in `User` model that most people and projects use (rather than creating their own user models in a silo) because it can be instantiated automatically with the current user's information.
+
 [^13]: Currently I'm imagining something like [Objective-C's Categories](https://en.wikipedia.org/wiki/Objective-C#Categories).
+
 [^14]: I'd be very happy if Tanagram becomes a go-to "backend" service for experiments in programming UI, like [Natto](https://natto.dev), [NoFlo](https://noflojs.org), and [Dark](https://www.youtube.com/watch?v=orRn2kTtRXQ) have built.

@@ -73,11 +73,19 @@ _Thanks to [Eric Gade](https://twitter.com/ecgade), [Tanishq Kancharla](https://
 
 
 [^0]: And, eventually, building blocks for building your own building blocks.
+
 [^1]: And if you don't know about them, someone will probably suggest you use them in code review.
+
 [^2]: The contents of the `implementation` field don't matter for this example. Possible options include textual source code, compiled bytecode, or a (pointer to a) standalone executable.
+
 [^3]: The fields of this table are left as an exercise to the reader. You'll probably want to include a stable `id` field though.
+
 [^5]: In SQL, perhaps something like `SELECT code.pointer FROM code c JOIN implements_protocol ip ON ip.code_id = c.id JOIN protocol p on p.id = ip.protocol_id WHERE p.name = '…'`
+
 [^6]: Suppose you have a `WHERE` clause in the template like `WHERE a AND b AND {{x}}`, where `x` is an interpolated clause. If `x` gets filled in with a clause like `y OR z`, the lack of parentheses around the interpolation would mean this behaves like `(a AND b AND y) OR z`, which is probably _not_ what the author of `x` intended.
+
 [^7]: The actual UI for doing so is left as an exercise for the reader.
+
 [^8]: [The personal computer hasn't been invented yet](https://twitter.com/tayroga/status/1426241670157377539).
+
 [^9]: Finding "corresponding" code is a whole problem category that is very codebase-specific and, beyond go-to-definition, is not well-served by plain-text tools. Another example that I like to use: for pubsub/event-based code, how do you find all the code that consumes an event from a given publisher, or all the code that publishes an event from a given consumer?

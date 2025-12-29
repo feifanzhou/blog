@@ -96,12 +96,21 @@ Plain text seems quite primitive by comparison.
 _Thanks to [Tanishq Kancharla](https://twitter.com/moonriseTK) for reading early drafts and suggesting edits._
 
 [^1]: Why AppKit? Professionally, there seems to be near-universal disdain for Electron apps among programmers (or at least within a thousand-true-fans–sized subset), so much so that I think Tanagram being a truly native app could actually be its own selling point. Personally, I really dislike writing Javascript and working with all the associated tooling, and I find myself just as productive (if not more) building UIs in Swift with AppKit controls.
+
 [^2]: Refactors are often [just trading someone else's comprehensibility for your own](https://twitter.com/disconcision/status/1412482960029270016?s=21).
+
 [^3]: If you work on a web app whose codebase has been around for at least a few years, how many different syntactic patterns for URL matching are there? Maybe one for the marketing site, one for the main API, and one or more for various admin pages. If you work on the main API and need to fix a bug in an admin page but you're not familiar with that part of the codebase, how do you find the code for that admin page?
+
 [^4]: For example, loading a sample of what the data for a particular model field looks like "next to" the code for that model, or seeing the run history of a cron job "next to" the code for that cron job.
+
 [^5]: For example, it's often difficult to figure out what CLI commands _can_ do without seeing usage examples and copying them, some operations are ungainly to represent in plain text, and CLIs are often not resistant to typos. Filling out a GUI form requires much less thinking and can be less error-prone (e.g. through input validation and more expressive ways of inputting complex values).
+
 [^6]: Runtime results could mean something like a component on a page that is perhaps rendering the wrong data, or an invalid database record that causes application code to crash trying to load it. The corresponding code might be the implementation of the component itself or the API code that provides its data, or the various constructors and mutators that might've inserted or updated that database record.
+
 [^7]: How would you find the relevant functions? The functions themselves could be represented as data records with attributes that describe what sort of code they output. You could then query the functions with something along the lines of: `SELECT * FROM codegen_functions WHERE output_type = 'http_server_route'`.
+
 [^8]: Currently, the handlers are entirely implemented as plain-text code that just happens to follow a known interface. But that doesn't necessarily have to be the case — future versions of Tanagram will support other types of database-defined code that the runtime will know how to invoke, just like functions and methods. 
+
 [^9]: If you're curious, the changes included identifying or creating a model that corresponded to the event itself, adding the `type` name to the canonical enum, adding the `type` name to related enums (e.g. a public enum if the type was meant to be user-facing or an undocumented enum if not), defining the event-to-type mapping, creating a factory class, adding the type to a dozen places in aggregation and reporting code, updating all the corresponding test code, generating API specs and protobufs — and several more changes to support _internal_ reporting and metrics.
+
 [^10]: In practice, such a tool would only work until the next time someone decided to rearrange the codebase.

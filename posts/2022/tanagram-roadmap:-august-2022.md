@@ -49,5 +49,7 @@ I've been learning AppKit, and I'm off to a humble start:
 ![](https://files.tanagram.app/file/tanagram-data/prod-feifans-blog/2022-08-roadmap/tanagram-2022-08-06.png)
 
 [^0]: Tanagram's fundamental insight, as far as I can tell at this point in its development, is that it will be valuable to unify source code, runtime records, and user-data records into a single integrated development environment with a set of tools that can operate across all that data. The status quo of software development today is that this is _not_ the case, that this is a source of development friction, and that unifying the triumvirate will enable much better tools and understanding of software systems.
+
 [^1]: Tanagram's [canvas](https://feifan.blog/posts/tanagram-roadmap:-july-2022) provides a way of spatially organizing items that goes beyond files in a tree. That spatial arrangement will likely have semantic meaning (e.g. users might arrange items in a particular order to correspond to a flow of data, or users might visually cluster logically-related items), and Tanagram should probably capture that spatial arrangement when showing potential changes. This means that simply displaying a flat list of changes (akin to a git diff) won't be good enough.
+
 [^2]: The main reasons are privacy of end-users' data, avoiding data integrity problems caused by development data, and just the sheer volume of data and runtime records.

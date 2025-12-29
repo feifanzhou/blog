@@ -34,5 +34,7 @@ But **my bigger point** is that I think these are symptoms of chronic, pervasive
 Above all that, I get the feeling that the median vocabulary of interactions with computers is shrinking. I see so many people who's entire computing experience is laboriously moving the mouse, clicking on buttons, and maybe poking ⌘C and ⌘V. For knowledge workers who spend half their waking hours using a computer, that's [akin to being a professional athlete who never visits the gym](https://notes.andymatuschak.org/z4qhD8UwNAmJDdJUC36BUGp5PEUfgfzZXvkhB). And if the median computer user uses computers entirely by mousing around, they'll design software that is meant to be used entirely by mousing around, and that'll force others to learn that software is meant to be used by mousing around, and the loop perpetuates. In such a world, _of course_ no one writes a test or QA script to make sure copy-and-paste doesn't mangle formatting, because, well, who does that anyway?
 
 [^3]: See [Superhuman](https://superhuman.com) — $30/month for keyboard shortcuts and software that just _isn't slow_.
+
 [^1]: Of course I know about keyboard shortcuts. In this case, part of my workflow in each conversation involved a part of the UI that, as far as I could tell, wasn't accessible by keyboard shortcuts. So I had to use the mouse, and if I was going to do that I wanted to figure out the _fastest_ way to do it with a mouse.
+
 [^2]: People with RSI might contend this is, in fact, a big deal.

@@ -107,13 +107,23 @@ The database-codebase can eliminate a lot of incidental complexity required to u
 *Thanks to [Hirday Gupta](https://twitter.com/hirday_g) and [Long Tran](https://twitter.com/LongTran02) for reading early drafts and suggesting edits. Cover photo by [Joshua Sortino](https://unsplash.com/@sortino?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText) on [Unsplash](https://unsplash.com/?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText).*
 
 [^0]: E.g. the `UI` prefix in [`UIKit` classes](https://developer.apple.com/documentation/uikit/views_and_controls).
+
 [^1]: E.g. suffixing `Controller` to the class names of controllers in an MVC-based codebase.
+
 [^2]: The top [StackOverflow answer](https://stackoverflow.com/a/28541708/472768) for "rails list resources" involves some regex wrangling on the router file.
+
 [^3]: Many pubsub systems use string keys, and strings can be manipulated at runtime, so this is admittedly difficult. It would require a combination of static code analysis and runtime tracing.
+
 [^4]: In other words, distributed tracing.
+
 [^5]: At the risk of glamorizing historical constraints, the early days of UNIX worked like this. Ken Thompson [wrote](https://susam.github.io/tucl/the-unix-command-language.pdf): "`cc` is the compiler for the C language, which is the axis around which all of UNIX resolves. UNIX itself is written in C, as are the Shell, C, and about 70% of the system commands." C's standard library _was_ the OS's standard library.
+
 [^6]: The initial "Setup" section introduces some other libraries that aren't directly relevant to the post's main point. At the end of that section, there's a list of all the classes in the loaded codebase, and the "Locating deprecated classes" section picks up from there.
+
 [^7]: [This](https://ci.inria.fr/pharo-contribution/job/UpdatedPharoByExample/lastSuccessfulBuild/artifact/book-result/PharoTour/PharoTour.html) is a good overview.
+
 [^8]: This point generalizes beyond literal pubsub system. [Hirday](https://twitter.com/hirday_g) reminded me that this is also true for Redux actions and reducers (e.g. given an action, where is the reducer code that consumes it? Given a reducer case, where is the code that emits that action?).
+
 [^9]: Paraphrased from Section 5.3 of [the tutorial](https://www.bluej.org/tutorial/tutorial-201.pdf) (page number 21).
+
 [^10]: Specifically, I mean that the baseline for querying a codebase is usually regex-powered searches through [an editor](https://code.visualstudio.com/docs/editor/codebasics#_search-across-files) or a hosted tool like [Livegrep](https://github.com/livegrep/livegrep).

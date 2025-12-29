@@ -49,8 +49,13 @@ These roadmap updates will be a listing of functionality that I know I'll need t
 (✅ means "done"; ⏳ means "currently in-progress").
 
 [^0]: I spent a bunch of time this past week selecting and laying out a photo album (the printed kind) for 2021. It was a lot of fun!
+
 [^1]: Realistically, Alpha 1 will probably ship with support for a single cloud/VPS provider, but that part of the code will be designed to be pluggable so other providers can be integrated as extensions.
+
 [^2]: I intend for "run instances" to be logical groupings of server instances. Run instances are meant to be an atomic deploy target (e.g. you might have a `production` run instance or `qa-1` run instance), even though they might consist of multiple fungible server instances.
+
 [^3]: I'm actually not entirely sure of this. The alternative is that you have a single library of commands, and you could execute any command on any run instance (unless e.g. the command is explicitly designated for or not-for particular run instances). I'm currently choosing to build per-run-instance commands as an implementation convenience — this way, I can store commands in each run instance's database rather than in a separate store, but I don't have a strong opinion on what the right product direction is. If you have thoughts, please let me know!
+
 [^4]: Of course, there's room here for various extensions, e.g. a way to stage and atomically upload changes, or a CI/code review workflow. Those will come later and will be implemented as an extension point for plug-ins.
+
 [^5]: I'm mostly ignoring the storage space problem for now. I'll probably start with a simple time-based retention policy (e.g. only saving history for the past _x_ days).

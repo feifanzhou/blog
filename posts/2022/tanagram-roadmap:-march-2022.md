@@ -36,6 +36,9 @@ I haven't yet decided if I want to do this "bare metal"-style (by directly insta
 I'll have some answers to share around this next month.
 
 [^1]: I'm not very happy with the UI I've built so far. Admittedly that's in large part because I'm not very good at building UIs and my result so far is rather janky, but … at a conceptual level, the hierarchical UI I've built so far faces the same constraints that I find myself chafing at with other apps. I'd like to see if I can do better. More on this in a future post.
+
 [^2]: Cloud support will be pluggable and there should be enough flexibility in this interface for plugins to surface cloud-specific details — for example, a plugin for AWS might ask you about IAM settings for the EC2 instance it's going to create, whereas a plugin for Linode won't.
+
 [^3]: Or recycles an existing instance, eventually. It definitely could make sense to have a pool of instances ready to go, but I'm not planning to build any pool-management features at first.
+
 [^4]: Or check that it can establish a connection to your existing Postgres server.

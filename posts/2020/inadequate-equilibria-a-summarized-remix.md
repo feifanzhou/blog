@@ -117,10 +117,17 @@ A couple of the terms used in the book that were unfamiliar to me:
 # Footnotes
 
 [^2]: In many cases, if you (think you) can do better along some dimension, that dimension turns out to not be one that existing participants care about. It’s worth checking for signs of inexplicability and whether the system remains inexploitable by your ability to do better along that dimension.
+
 [^4]: See [https://equilibriabook.com/molochs-toolbox/#i](https://equilibriabook.com/molochs-toolbox/#i)
+
 [^5]: It’s a thing! Companies like [Stripe](https://stripe.com/blog/negative-emissions-commitment), [Shopify](https://news.shopify.com/we-need-to-talk-about-carbon), [Microsoft](https://blogs.microsoft.com/blog/2020/01/16/microsoft-will-be-carbon-negative-by-2030/), and [Delta Airlines](https://news.delta.com/delta-commits-1-billion-become-first-carbon-neutral-airline-globally) are making serious commitments in the space.
+
 [^6]: In particular, you’ll want to avoid blanket generalizations about what you can, can’t, and won’t do. In particular, if you’ve tried something and succeeded or failed at it before, you’ll have to be honest with yourself about whether you or the world has changed enough such that your previous experience may no longer apply.
+
 [^7]: Generalized, this is part of [improving your decision-making process](https://fs.blog/2013/03/what-matters-more-in-decisions-analysis-or-process/).
+
 [^8]: A friend commented that this is reminiscent of Venkatesh Rao’s [_Be Slightly Evil_](https://www.amazon.com/Be-Slightly-Evil-Sociopaths-Ribbonfarm-ebook/dp/B00F8JTYH8).
+
 [^9]: Why does this happen? Watching people “cheating” the system by skipping the customary shibboleths and getting away with it results in a degree of disdain from the people who have. If you’ve gotten an advanced degree or are an expert in some field, and come across someone who claims to know a lot about that field because they read a lot about it on Wikipedia, how would you initially react?
+
 [^10]: See also [this generalization](https://www.lesswrong.com/posts/dnxMqkx2W5JnXHejb/what-are-some-meta-umeshsims#hKK9vy5tcED64BKGG) of this idea.

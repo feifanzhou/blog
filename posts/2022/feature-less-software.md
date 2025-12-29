@@ -84,14 +84,25 @@ I think feature-less software, as I've defined it here, both alleviates these pr
 _Thanks to [Alexander Obenauer](https://twitter.com/alexobenauer) and [Tanishq Kancharla](https://twitter.com/moonriseTK) for reading drafts of this post. Hero graphic started with [an image](https://unsplash.com/photos/HbcfaO4m03s) from Pawel Czerwinski on Unsplash._
 
 [^1]: This, of course, represents the missing edit feature that [many users have asked for](https://www.theverge.com/2020/1/15/21066815/twitter-edit-button-jack-dorsey-says-no)
+
 [^2]: If you see a text field, you'd expect, for example, to see your typing in it reflected immediately and your Backspace and arrow keys to do the right thing. But there are [many more nuances](https://drewdevault.com/2021/06/27/You-cant-capture-the-nuance.html?utm_source=pocket_mylist) in how text fields should work. If these nuances were all codified somewhere, such a listing could represent a "standard library" of text field functionality. No such listing exists.
+
 [^3]: For example, iOS's [Silence Unknown Callers](https://support.apple.com/en-us/HT207099) feature didn't ship until iOS 13; I remember wishing for a way to do that for years before it finally shipped. From a data-models-and-actions perspective, this could be thought of as a gap at intersection of a "phone call" data model and a "should alert?" action.
+
 [^4]: For example, some apps (like Slack and Notion) have slash-command menus, which offer a set of features found nowhere else in the UI.
+
 [^5]: For example, sometimes you can right-click on things to bring up a useful menu. Other times, you can right-click on things to bring up a generic menu. And occasionally, right-clicking doesn't do anything at all.
+
 [^6]: For example, word processors including [Word](https://support.microsoft.com/en-us/topic/the-styles-advantage-in-word-b4a6372f-188c-93cb-831b-c4dd0cb3a881), [Google Docs](https://support.google.com/docs/answer/116338?hl=en&co=GENIE.Platform%3DDesktop#zippy=%2Cset-and-change-a-default-style), and [Pages](https://support.apple.com/guide/pages/intro-to-paragraph-styles-tanaa39b0aa3/mac) support paragraph styles to enforce a consistent appearance for headings, body text, and other types of content in a document. But many people don't know about or how to use this feature, and instead compose basic formatting features (toggling bold or italics, setting text color, etc) to achieve the end result of changing the appearance of different types of content in a document.
+
 [^7]: One recent example from my experience is sorting columns in Google Sheets. I wanted to sort a sheet by a particular column, but that change also synced to other people on that sheet and it was disruptive to what _they_ were doing. I think I could've worked around this by creating a filter instead, but that's a more complicated workaround (i.e. "filters" are a different, more complicated feature compared to sorting a column).
+
 [^8]: For example, Lightroom has a great feature to [create panoramas](https://helpx.adobe.com/lightroom-classic/help/panorama.html), but I can't use it directly on photos in my iCloud Photo Library. I have to export photos from Photos.app, import them into Lightroom, create the panorama, export the result, and re-import the result into Photos.app.
+
 [^9]: I think Slack was (one of) the first apps to introduce the `:emoji-name:` syntax for typing out emojis. Some other apps have copied this feature, but it's far from universal and there's no mechanism for me to make it universal across text fields on my "personal" computer.
+
 [^10]: For example, Lyft has [one app for riders](https://apps.apple.com/us/app/lyft/id529379082) and [another app for drivers](https://apps.apple.com/us/app/lyft-driver/id1203077485) with different UIs and features. Professional apps, such as Lightroom and DaVinci Resolve, have [different UI "modules"](https://librarynews.northeastern.edu/?p=275748) corresponding to different workflows in the professional process.
+
 [^11]: It should take _approximately_ the same amount of time to assemble such a program as it would take to write documentation around a process … at least within, say, a 1×–5× difference (i.e. it might take an hour to document a process and half a workday to create the program to run the process). For most teams today, the status quo is probably a difference between 10×–100× longer.
+
 [^12]: This would be something like a capability "App Store", where the offerings are probably the approximate granularity of browser extensions — generally smaller than a whole "app", but bigger than an NPM module.

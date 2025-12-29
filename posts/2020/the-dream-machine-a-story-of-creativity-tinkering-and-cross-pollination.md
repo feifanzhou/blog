@@ -64,7 +64,11 @@ Despite their zeal for progress, the computer scientists at PARC carried additio
 Nevertheless, it was the hobbyists who inexorably took PARC's ideas and brought them into the world. Lick would've considered himself a hobbyist, relying on intuition and hunches to tie together the computing nascent computing world during a few decades of intense discovery and development progress. By the late 1970s, The PARC researchers had widely disseminated their research and became known to everyone who worked with computers. Their window-based UI was not a secret. Steve Jobs' legendary visit in December 1979 introduced him and his team to the friendliness and interactivity that the Smalltalk programming environment enabled[^8]. They would go on to propagate these ideas through Apple's computers, first with the Lisa and later with the Macintosh in 1984. By the end of the decade, the prevalence of personal computers made it almost a necessity to inter-network them, a user-driven need that resulted in the development of the modern internet. This further enabled hobbyists, including vast numbers who've learned how to use and control computers through content discovered and published by others who had gone through similar experiences. The ability to use and control — program — computers had trickled out of research labs and small local communities, giving rise to large online communities and legions of modern-day hobbyists interacting with their computers and slowly discovering what they can really do.
 
 [^0]: Roberts quickly assembled a program to categorize, retrieve and delete messages, thereby improving the ergonomics of using e-mail based on user feedback.
+
 [^3]: Bob Taylor remarked: "Never hire 'good' people, because ten good people together can't do what a single great one can do"
+
 [^4]: "Computers and Government", published in the essay compendium _The Computer Age: A Twenty-Year View_ in 1979.
+
 [^7]: Bob Taylor later indicated that he believed Pake wasn't able to make inroads at HQ because Pake only saw a collection of gadgets without understanding the vision of the whole system himself.
+
 [^8]: The smiling Finder icon on modern macs is a vestigial remnant of this friendliness.

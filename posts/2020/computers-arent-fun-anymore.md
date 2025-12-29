@@ -24,11 +24,19 @@ To be fair, computers — both the desktop kind and various mobile kinds — ena
 For the people who've figured out the right incantations to type and buttons-buried-in-submenus to click, computers can automate administrivia, surface information, and make them feel "more fully participant in the future". But getting there is an arduous journey, and many people get in a place where computers just make things harder. The experience of using computers is, in various ways, awkward and frustrating (and maybe even dangerous[^8]) for everyone. Computers were supposed to be bicycles for the mind. So far we only have penny-farthings.
 
 [^0]: If you wanted to build a [web] app to do … anything, you probably have to start by setting up a database server, building a schema from scratch, possibly importing existing data or building a bespoke API-based integration, HTTP endpoints and request and response payloads. To build the UI you're given little more than buttons and generic rectangles and an unkempt jungle of components and abstractions that may or may not be any good. Project setup scripts exist, but all that [incidental complexity](https://www.infoq.com/presentations/Simple-Made-Easy/) still [_exists_](https://twitter.com/dhh/status/1258074299337826304?s=21) in your codebase before you've even gotten to the intrinsic complexity of what you're actually trying to build.
+
 [^1]: I explored this [on Twitter](https://twitter.com/feifanz/status/1285766348975427585?s=21)
+
 [^2]: Specifically, I'm referring to UIs that tend to have low contrast/readability, hidden functionality, and acres of space between elements that aren't accessible via keyboard controls, only laboriously mousing. I'm not sure if flat design was the starting point for these problems, but I think it's accurate to say it was an inflection point at least.
+
 [^3]: Halide: RAW photography from the camera you already have that rivals the quality of much bulkier DSLRs.
+
 [^4]: Concepts: An infinite canvas. Literally impossible without software.
+
 [^5]: Spreadsheets: replaced roomfuls of human computers (literally, "people who computed")
+
 [^6]: Sometimes, someone builds a new app to address a feature gap. But building a new app requires a ton of effort just to get to parity with what already exists (see above), and this new offering will inevitably have feature gaps elsewhere.
+
 [^7]: See [Justin's tweet here](https://twitter.com/itunpredictable/status/1266125506925092864)
+
 [^8]: From the benign case of accidental deletion to not being able to comprehend the deceptiveness of artifically-generated content.

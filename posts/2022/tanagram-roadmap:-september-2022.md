@@ -55,4 +55,5 @@ I'll spend September building more UI to showcase some specific use cases I have
 
 
 [^0]: For readers who are or have worked at Stripe, yes this is inspired by `go/o/:id`, which is a _great_ idea.
+
 [^1]: I also turned around and taught the world what I'd learned in [a blog](https://cupsofcocoa.wordpress.com/) that got moderately popular.

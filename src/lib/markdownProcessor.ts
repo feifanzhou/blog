@@ -1,4 +1,5 @@
 import MarkdownIt from 'markdown-it';
+import footnote from 'markdown-it-footnote';
 import matter from 'gray-matter';
 import Prism from 'prismjs';
 
@@ -78,6 +79,9 @@ const md: MarkdownIt = new MarkdownIt({
     return `<pre class="language-${lang}"><code class="language-${lang}">${md.utils.escapeHtml(str)}</code></pre>`;
   },
 });
+
+// Register the footnote plugin
+md.use(footnote);
 
 export interface ProcessedPost {
   meta: BlogPostMeta & { slug: string };
